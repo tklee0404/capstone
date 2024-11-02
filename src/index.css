@@ -1,0 +1,36 @@
+:root {
+  --primaryColor: #72a126;
+  --secondColor: #e9b872;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainRed: #c45151;
+  --mainGreen: #4caf50;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 캡스톤 body {
+  background: linear-gradient(to bottom, white 60%,#72A126);
+  background-repeat: no-repeat;
+  height: 910px;
+  background-size: cover;
+  background-origin: border-box;
+  color: var(--mainBlack);
+} */
+
+body {
+  background: linear-gradient(to bottom, white 60%, #72a126);
+  background-repeat: round;
+  width: 100%;
+  height: 919px;
+  background-size: cover;
+  background-origin: border-box;
+  color: var(--mainBlack);
+}
+
+h1 {
+  margin: 1rem 0;
+}

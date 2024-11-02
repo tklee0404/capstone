@@ -1,0 +1,30 @@
+.news_background {
+  background-color: #d9d9d9;
+  border: 1px solid #000;
+
+  width: 1200px;
+  height: 700px;
+  top: 20%;
+  left: 10%;
+  position: absolute;
+}
+
+.news_background_intro {
+  text-align: center;
+  font-size: 30px;
+}
+
+.keyword_background {
+  background-color: #d9d9d9;
+  border: 1px solid #000;
+  width: 400px;
+  height: 700px;
+  top: 20%;
+  left: 75%;
+  position: absolute;
+}
+
+.keyword_background_intro {
+  text-align: center;
+  font-size: 30px;
+}

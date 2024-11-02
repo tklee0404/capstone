@@ -1,0 +1,26 @@
+.main-container {
+  margin: 0 auto;
+  max-width: 1280;
+  width: 100%;
+}
+
+.main_logo {
+  margin-top: 70px;
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 15%;
+  height: 15%;
+  cursor: pointer;
+}
+
+.img {
+  display: block;
+}
+
+.main_wrap {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
