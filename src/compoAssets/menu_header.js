@@ -25,7 +25,7 @@ function Menu_Header() {
   return (
     <div className="menu_header">
       <div className="menu_button">
-        <Link to="/NewsPage">
+        <Link to="/News1">
           <button className="menu_button">뉴스</button>
         </Link>
       </div>

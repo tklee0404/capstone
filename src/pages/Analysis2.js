@@ -9,7 +9,7 @@ import {
   Routes,
   NavLink,
 } from "react-router-dom";
-import Main_Header from "../compoAssets/main_header";
+import Menu_Header from "../compoAssets/menu_header";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import K01 from "../logo_image/emblem_K01.png";
@@ -28,9 +28,13 @@ import "../App.css";
 
 function Analysis2() {
   return (
-    <div className="analysis_container">
-      <div className="analysis_table"></div>
-      <div className="analysis_graph"></div>
+    <div>
+      <Menu_Header></Menu_Header>
+      <div className="analysis_container">
+        analysis 상세 페이지
+        <div className="analysis_table"></div>
+        <div className="analysis_graph"></div>
+      </div>
     </div>
   );
 }

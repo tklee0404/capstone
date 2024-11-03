@@ -1,4 +1,38 @@
+.analysis_intro_container {
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .analysis_intro {
+  width: 600px;
+  text-align: center;
+  font-size: 30px;
+  
+}
+
+.analysis_input_container {
+  margin-top: 100px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.analysis_input_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.analysis_input {
+  width: 150px;
+  height: 50px;
+  text-align: center;
 }
 
 .analysis_button_container {
@@ -7,11 +41,12 @@
 }
 
 .analysis_button {
+  margin-top: 100px;
   width: 200px;
   height: 50px;
   color: white;
   border: 1px solid black;
-  background-color: blue;
+  background-color: #6079D0;
   font-size: large;
   font-weight: bold;
   cursor: pointer;

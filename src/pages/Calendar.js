@@ -14,6 +14,8 @@ import { useLocation } from "react-router-dom";
 import Menu_Header from "../compoAssets/menu_header";
 import { useState, useEffect } from "react";
 import "../App.css";
+import "../compoAssets/calendar_page_style.css";
+import CALENDAR from "../compoAssets/calendar_page_calendar";
 
 import K01 from "../logo_image/emblem_K01.png";
 import K02 from "../logo_image/emblem_K02.png";
@@ -38,14 +40,27 @@ function Calendar() {
     }
   }, []);
 
+  const [dateValue, onChange] = useState(new Date());
+
   if (selectedTeam == "team1") {
     return (
       <div>
         <Menu_Header></Menu_Header>
-        <img src={K01} alt="aaa"></img>
+        <div className="calendar_container">
+          <img src={K01} alt="ULSAN"></img>
+
+          <div className="calendar">
+            <CALENDAR></CALENDAR>
+          </div>
+
+          <div className="match_information">
+            <h1>match_information</h1>
+          </div>
+        </div>
       </div>
     );
   }
+  
 }
 
 export default Calendar;

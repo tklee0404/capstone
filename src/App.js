@@ -6,10 +6,13 @@ import {BrowserRouter as Router, Route, Switch, Link, useNavigate, BrowserRouter
 import "./App.css";
 import Main_Header from './compoAssets/main_header.js';
 import Home from './pages/Home.js';
-import NewsPage from './pages/NewsPage.js';
+import News1 from './pages/News1.js';
+import News2 from './pages/News2.js';
 import Calendar from './pages/Calendar.js';
 import Analysis1 from './pages/Analysis1.js';
+import Analysis2 from './pages/Analysis2.js';
 import Predict1 from './pages/Predict1.js';
+import Predict2 from './pages/Predict2.js';
 
 
 
@@ -24,10 +27,13 @@ function App() {
       <Main_Header></Main_Header>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/NewsPage" element={<NewsPage />}></Route>
+        <Route path="/News1" element={<News1 />}></Route>
+        <Route path="/News2" element={<News2 />}></Route>
         <Route path="/Calendar" element={<Calendar />}></Route>
         <Route path="/Analysis1" element={<Analysis1 />}></Route>
         <Route path="/Predict1" element={<Predict1 />}></Route>
+        <Route path="/Analysis2" element={<Analysis2 />}></Route>
+        <Route path="/Predict2" element={<Predict2 />}></Route>
       </Routes>
 
       </BrowserRouter>

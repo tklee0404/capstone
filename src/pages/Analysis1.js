@@ -51,13 +51,17 @@ function Analysis1() {
       <div className="analysis_intro_container">
         <h2 className="analysis_intro">-분석하고 싶은 기간을 입력하세요-</h2>
       </div>
-      <div>
+      <div className="analysis_input_container">
+        <div className="analysis_input_row">
         <input
+          className="analysis_input"
           type="text"
           value={month}
           onChange={handleChange}
           placeholder="숫자만 입력 (1~12)"
         />
+        <h3>달</h3>
+        </div>
       </div>
       <div className="analysis_button_container">
         <Link to="/Analysis2">
