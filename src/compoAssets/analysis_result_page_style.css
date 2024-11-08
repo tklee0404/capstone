@@ -1,0 +1,42 @@
+.analysis_result_container {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    
+    height: 80vh;
+  
+  }
+  
+  .analysis_result_table_container {
+    
+    display: flex;
+    align-items: center;
+
+    width: 800px;
+    height: 650px;
+    background-color: #d9d9d9;
+    border: 1px solid #000;
+    
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .analysis_result_table {
+    margin-left: 40px;
+  }  
+  
+  .analysis_result_graph_container {
+    display: flex;
+    align-items: center;
+    width: 800px;
+    height: 650px;
+    background-color: #d9d9d9;
+    border: 1px solid #000;
+    margin-left: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+.analysis_result_graph {
+  margin-left: 20px;
+}

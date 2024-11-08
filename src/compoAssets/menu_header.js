@@ -22,31 +22,40 @@ function Menu_Header() {
     }
   }, []);
 
+  const location = useLocation();
+
+  // 버튼의 색상을 동적으로 적용하는 함수
+  const getButtonStyle = (path) => {
+    return location.pathname === path
+      ? { backgroundColor: "black", color: "white" }
+      : { backgroundColor: "#72a126", color: "#000" };
+  };
+
   return (
     <div className="menu_header">
       <div className="menu_button">
         <Link to="/News1">
-          <button className="menu_button">뉴스</button>
+          <button className="menu_button" style={getButtonStyle("/News1")}>뉴스</button>
         </Link>
       </div>
       <div className="menu_button">
         <Link to="/Calendar">
-          <button className="menu_button">일정</button>
+          <button className="menu_button" style={getButtonStyle("/Calendar")}>일정</button>
         </Link>
       </div>
       <div className="menu_button">
         <Link to="/Analysis1">
-          <button className="menu_button"> 분석</button>
+          <button className="menu_button" style={getButtonStyle("/Analysis1")}> 분석</button>
         </Link>
       </div>
       <div className="menu_button">
         <Link to="/Predict1">
-          <button className="menu_button">예측</button>
+          <button className="menu_button" style={getButtonStyle("/Predict1")}>예측</button>
         </Link>
       </div>
       <div className="menu_button">
         <Link to="/">
-          <button className="menu_button">홈</button>
+          <button className="menu_button" style={getButtonStyle("/")}>홈</button>
         </Link>
       </div>
     </div>

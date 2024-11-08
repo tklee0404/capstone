@@ -55,3 +55,9 @@
   position: relative;
   justify-content: space-around;
 }
+
+.analysis_dropdown{
+  width: 150px;
+  height: 50px;
+  text-align: center;
+}

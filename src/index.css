@@ -21,11 +21,25 @@
   color: var(--mainBlack);
 } */
 
-body {
+html {
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
   background: linear-gradient(to bottom, white 60%, #72a126);
   background-repeat: round;
   width: 100%;
-  height: 919px;
+  height: 100%;
+  background-size: cover;
+  background-origin: border-box;
+  color: var(--mainBlack);
+}
+
+body {
+  background-attachment: fixed;
+  background: linear-gradient(to bottom, white 60%, #72a126);
+  background-repeat: round;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-origin: border-box;
   color: var(--mainBlack);

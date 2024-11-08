@@ -1,5 +1,10 @@
+@font-face {
+  font-family: "Giants-Regular";
+  src: url("./Giants-Regular.ttf");
+}
+
 .menu_header {
-  width: 100%;
+  width: 1920px;
   border-bottom: 1px solid #000;
   background-color: white;
   padding: 10px;
@@ -9,16 +14,11 @@
 }
 
 .menu_button {
-  display: inline;
-  color: #000;
-}
-
-.menu_button {
   width: 200px;
   height: 50px;
-  border: 1px solid #000;
-  background-color: #72a126;
-  font-size: large;
-  font-weight: bold;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  font-family: "Giants-Regular";
+  font-size: 20px;
   cursor: pointer;
 }

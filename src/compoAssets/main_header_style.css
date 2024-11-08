@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "K2D-BoldItalic";
+  src: url("./K2D-BoldItalic.ttf");
+}
+
 .main_header {
   background-color: white;
-  width: 100%;
+  
+  width: 1920px;
   height: 65px;
   color: black;
   display: flex;
@@ -8,15 +14,18 @@
   left: 0;
   right: 0;
   border-bottom: 1px solid #000;
-  text-align: center;
+  
   align-items: center;
 }
 
 .service_name {
+  font-family: "K2D-BoldItalic";
+  text-align: center;
   margin-left: 30px;
 }
 
 .header_intro {
+  text-align: center;
   margin-left: 600px;
   font-size: 25px;
 }
@@ -26,3 +35,4 @@
   height: 50px;
   margin-left: 20px;
 }
+

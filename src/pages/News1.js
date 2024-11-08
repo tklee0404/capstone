@@ -56,25 +56,64 @@ function News() {
     
     localStorage.setItem(
       "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "이적" })
+      JSON.stringify({ selectedNewsType: "부상" })
+      //to yang_hang : Categry : Injury : 부상
     );
   };
   const selectNewsType2 = () => {
     localStorage.setItem(
       "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "부상" })
+      JSON.stringify({ selectedNewsType: "구단 관련" })
+      //to yang_hang : Categry : Club_internal : 구단 관련
     );
   };
   const selectNewsType3 = () => {
     localStorage.setItem(
       "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "이벤트" })
+      JSON.stringify({ selectedNewsType: "선수" })
+      //to yang_hang : Categry : Player_idv : 선수
     );
   };
   const selectNewsType4 = () => {
     localStorage.setItem(
       "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "일정" })
+      JSON.stringify({ selectedNewsType: "경기 결과" })
+      //to yang_hang : Categry : Match_result : 경기 결과
+    );
+  };
+  const selectNewsType5 = () => {
+    localStorage.setItem(
+      "newsTypeSelect",
+      JSON.stringify({ selectedNewsType: "경기 전" })
+      //to yang_hang : Categry : Match_plan : 경기 전
+    );
+  };
+  const selectNewsType6 = () => {
+    localStorage.setItem(
+      "newsTypeSelect",
+      JSON.stringify({ selectedNewsType: "논란" })
+      //to yang_hang : Categry : Issue : 논란
+    );
+  };
+  const selectNewsType7 = () => {
+    localStorage.setItem(
+      "newsTypeSelect",
+      JSON.stringify({ selectedNewsType: "이적" })
+      //to yang_hang : Categry : Trade : 이적
+    );
+  };
+  const selectNewsType8 = () => {
+    localStorage.setItem(
+      "newsTypeSelect",
+      JSON.stringify({ selectedNewsType: "선발 라인업" })
+      //to yang_hang : Categry : Squad : 선발 라인업
+    );
+  };
+  const selectNewsType9 = () => {
+    localStorage.setItem(
+      "newsTypeSelect",
+      JSON.stringify({ selectedNewsType: "인터뷰" })
+      //to yang_hang : Categry : Interview : 인터뷰
     );
   };
 
@@ -84,46 +123,111 @@ function News() {
       <Menu_Header></Menu_Header>
       <img src={teamImgSrc} alt={`${selectedTeam}_logo`}></img>
 
-      <div className="news_container">
-        <Link to='/News2' onClick={selectNewsType1}>
-          <div className="news_block">
-            <div className="news_block_intro">
-              이적
+      <div className="news_container_big">
+        <div className="news_container">
+          <Link to='/News2' onClick={selectNewsType1} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                부상
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
             </div>
-            <div className="news_block_info">
-              information
-            </div>
-          </div>
-        </Link>
+          </Link>
 
-        <Link to='/News2' onClick={selectNewsType2}>
-          <div className="news_block">
-            <div className="news_block_intro" onClick={selectNewsType2}>
-              부상
+          <Link to='/News2' onClick={selectNewsType2} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                구단 관련
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
             </div>
-             <div className="news_block_info">
-              information
-            </div>
-          </div>
-        </Link>
+          </Link>
 
-        <div className="news_block">
-          <div className="news_block_intro">
-            이벤트
-          </div>
-          <div className="news_block_info">
-            information
-          </div>
+          <Link to='/News2' onClick={selectNewsType3} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                선수
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
+            </div>
+          </Link>
+          <Link to='/News2' onClick={selectNewsType4} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                경기 결과
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
+            </div>
+          </Link>
         </div>
-        <div className="news_block">
-          <div className="news_block_intro">
-            일정
-          </div>
-          <div className="news_block_info">
-            information
-          </div>
+
+        <div className="news_container">
+          <Link to='/News2' onClick={selectNewsType5} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                경기 전
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType6} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                논란
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType7} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                이슈
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType8} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                선발 라인업
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType9} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                인터뷰
+              </div>
+              <div className="news_block_info">
+                information
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
+
+      
 
       
       <div className="keyword_container">

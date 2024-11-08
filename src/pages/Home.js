@@ -39,6 +39,67 @@ function Home() {
       JSON.stringify({ selectedTeam: "포항" })
     );
   };
+  const selectTeam3 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "제주" })
+    );
+  };
+  const selectTeam4 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "전북" })
+    );
+  };
+  const selectTeam5 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "서울" })
+    );
+  };
+  const selectTeam6 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "대전" })
+    );
+  };
+  const selectTeam7 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "대구" })
+    );
+  };
+  const selectTeam8 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "인천" })
+    );
+  };
+  const selectTeam9 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "강원" })
+    );
+  };
+  const selectTeam10 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "광주" })
+    );
+  };
+  const selectTeam11 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "수원FC" })
+    );
+  };
+  const selectTeam12 = () => {
+    localStorage.setItem(
+      "teamSelect",
+      JSON.stringify({ selectedTeam: "김천" })
+    );
+  };
+
 
   return (
     <div className="main_wrap">
@@ -58,18 +119,37 @@ function Home() {
           onClick={selectTeam2}
         ></img>
       </Link>
-      <Link to="/News1" state={{ teamSelect: "team3" }}>
-        <img className="main_logo" src={제주} alt="team3_logo"></img>
+      <Link to="/News1">
+        <img className="main_logo" src={제주} alt="team3_logo" onClick={selectTeam3}></img>
       </Link>
-      <img className="main_logo" src={전북} alt="team4_logo"></img>
-      <img className="main_logo" src={서울} alt="team5_logo"></img>
-      <img className="main_logo" src={대전} alt="team6_logo"></img>
-      <img className="main_logo" src={대구} alt="team7_logo"></img>
-      <img className="main_logo" src={인천} alt="team8_logo"></img>
-      <img className="main_logo" src={강원} alt="team9_logo"></img>
-      <img className="main_logo" src={광주} alt="team10_logo"></img>
-      <img className="main_logo" src={수원FC} alt="team11_logo"></img>
-      <img className="main_logo" src={김천} alt="team12_logo"></img>
+      <Link to="/News1">
+        <img className="main_logo" src={전북} alt="team4_logo" onClick={selectTeam4}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={서울} alt="team5_logo" onClick={selectTeam5}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={대전} alt="team6_logo" onClick={selectTeam6}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={대구} alt="team7_logo" onClick={selectTeam7}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={인천} alt="team8_logo" onClick={selectTeam8}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={강원} alt="team9_logo" onClick={selectTeam9}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={광주} alt="team10_logo" onClick={selectTeam10}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={수원FC} alt="team11_logo" onClick={selectTeam11}></img>
+      </Link>
+      <Link to="/News1">
+        <img className="main_logo" src={김천} alt="team12_logo" onClick={selectTeam12}></img>
+      </Link>
+
     </div>
   );
 }

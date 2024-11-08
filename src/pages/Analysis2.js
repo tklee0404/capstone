@@ -10,6 +10,8 @@ import {
   NavLink,
 } from "react-router-dom";
 import Menu_Header from "../compoAssets/menu_header";
+import Analysis_Graph from "../compoAssets/analysis_result_graph.js";
+import Analysis_Table from "../compoAssets/analysis_result_table.js";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import K01 from "../logo_image/emblem_K01.png";
@@ -25,15 +27,24 @@ import K10 from "../logo_image/emblem_K10.png";
 import K11 from "../logo_image/emblem_K11.png";
 import K12 from "../logo_image/emblem_K12.png";
 import "../App.css";
+import "../compoAssets/analysis_result_page_style.css";
 
 function Analysis2() {
   return (
     <div>
       <Menu_Header></Menu_Header>
-      <div className="analysis_container">
-        analysis 상세 페이지
-        <div className="analysis_table"></div>
-        <div className="analysis_graph"></div>
+      <div className="analysis_result_container">
+        
+        <div className="analysis_result_table_container">
+          <div className="analysis_result_table">
+            <Analysis_Table></Analysis_Table>
+          </div>
+        </div>
+        <div className="analysis_result_graph_container">
+          <div className="analysis_result_graph">
+            <Analysis_Graph></Analysis_Graph>
+          </div>
+        </div>
       </div>
     </div>
   );
