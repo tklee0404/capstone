@@ -195,7 +195,7 @@ function News() {
           <Link to='/News2' onClick={selectNewsType7} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                이슈
+                이적
               </div>
               <div className="news_block_info">
                 information

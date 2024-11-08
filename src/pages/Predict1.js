@@ -42,7 +42,7 @@ function Predict1() {
 
       <Menu_Header></Menu_Header>
       <div className="analysis_intro_container">
-        <h2 className="analysis_intro">-예측하고 싶은 기간을 입력하세요-</h2>
+        <h2 className="analysis_intro">-예측하고 싶은 팀을 선택하세요-</h2>
       </div>
 
       <div className="analysis_input_container">
