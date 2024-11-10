@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Giants-Regular";
+  src: url("./Giants-Regular.ttf");
+}
+
+.predict_intro_container {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .predict_intro {
+    font-family: "Giants-Regular";
+    width: 600px;
+    text-align: center;
+    font-size: 30px;
+    
+  }
+  
+  .predict_input_container {
+    margin-top: 40px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .predict_input_row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .predict_input {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+  }
+  
+  .predict_button_container {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .predict_button {
+    width: 200px;
+    height: 50px;
+    color: white;
+    border: 1px solid black;
+    background-color: #6079D0;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+  
+    position: relative;
+    justify-content: space-around;
+  }
+  
+  .predict_dropdown{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+  }
+  
+  .nearest_game_container {
+    width: 400px;
+    height: 30vh;
+    background-color: #d9d9d9;
+    margin-top: 50px;
+    border: 1px solid #000;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nearest_game_result_team{
+    width: 90%;
+    height: 50%;
+    background-color: aqua;
+    display: flex;
+
+    text-align: center;
+    justify-content: space-around;
+    
+  }
+
+  .nearest_game_result_score {
+    font-size: 50px;
+    width: 90%;
+    height: 50%;
+    background-color: violet;
+    font-family: "Giants-Regular";
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+h1 {
+  font-family: "Giants-Regular";
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+
+}

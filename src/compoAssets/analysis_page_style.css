@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Giants-Regular";
+  src: url("./Giants-Regular.ttf");
+}
+
 .analysis_intro_container {
   width: 100%;
   margin-top: 100px;
@@ -8,6 +13,7 @@
 }
 
 .analysis_intro {
+  font-family: "Giants-Regular";
   width: 600px;
   text-align: center;
   font-size: 30px;
