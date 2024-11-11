@@ -15,6 +15,10 @@
     width: 900px;
     height: 650px;
 
+    max-height: 650px; /* 根据需要调整高度 */ 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+
 
 }
 
