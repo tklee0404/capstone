@@ -64,7 +64,9 @@
 
 .news_block_info {
   margin-top: 10px;
-  
+  max-height: 220px; /* 根据需要调整高度 */ 
+  overflow-y: auto; 
+  overflow-x: hidden; /* 可选：隐藏水平滚动条 */
 }
 
 .link_reset {
@@ -80,11 +82,17 @@
   /*width: 400px;*/
   height: 700px;
   top: 20%;
-  left: 75%;
+  left: 1370px;
   position: absolute;
 }
 
 .keyword_container_intro {
   text-align: center;
   font-size: 30px;
+}
+
+
+.inline{
+  display: inline;
+  color :burlywood
 }

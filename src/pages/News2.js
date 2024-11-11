@@ -18,9 +18,11 @@ import ExampleImage from '../logo_image/emblem_K01.png';
 function News2() {
 
     const [selectedNewsType, setSelectedNewsTeam] = useState();
-
+    const news_data = JSON.parse(localStorage.getItem("news_data"));
+    
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("newsTypeSelect"));
+
     if (storedData && storedData.selectedNewsType) {
         setSelectedNewsTeam(storedData.selectedNewsType);
     }
@@ -31,21 +33,12 @@ function News2() {
         <Menu_Header></Menu_Header>
         <div className="news_info_container">
 
-            
-
             <div className="news_info_catalog">
                 <div className="news_info_catalog_info">{selectedNewsType}</div>
             </div>
             <div className="news_info">
                 <ul>
-                    <li>
-                        <img src={ExampleImage}></img>
-                        info 1
-                    </li>
-                    <li>
-                        <img src={ExampleImage}></img>
-                        info 2
-                    </li>    
+                {news_data.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline}<p><a href={item.url}>URL:{item.url}</a></p></p> ))}
                 </ul>
             </div>
         </div>
