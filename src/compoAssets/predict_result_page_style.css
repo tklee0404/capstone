@@ -3,6 +3,7 @@
     src: url("./Giants-Regular.ttf");
   }
 .predict_page_container_outer {
+    padding-top: 7%;
     height: 100%;
     width: 100%;
     
@@ -17,7 +18,8 @@
     justify-content: space-around;
     align-items: center;
     align-content: space-evenly;
-    margin-left: 250px;
+    margin-left: 12%;
+    border-radius: 3rem;
 }
 
 .predict_page_logo_container {

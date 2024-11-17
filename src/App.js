@@ -24,7 +24,7 @@ function App() {
 
       <BrowserRouter>
 
-      <Main_Header></Main_Header>
+      
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/News1" element={<News1 />}></Route>

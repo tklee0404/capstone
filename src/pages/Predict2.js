@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Menu_Header from "../compoAssets/menu_header";
+import Main_Header from '../compoAssets/main_header.js';
 import { useState, useEffect } from "react";
 import "../App.css";
 import "../compoAssets/predict_result_page_style.css";
@@ -62,7 +63,7 @@ function Predict2() {
 
     return(
         <div>
-            <Menu_Header></Menu_Header>
+          <Main_Header></Main_Header>
             <div className="predict_page_container_outer">
                 <div className="predict_page_container_big">
                     <div className="predict_page_logo_container">

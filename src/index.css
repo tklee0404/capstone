@@ -12,35 +12,13 @@
   box-sizing: border-box;
 }
 
-/* 캡스톤 body {
-  background: linear-gradient(to bottom, white 60%,#72A126);
+html, body {
+  min-height: 100vh; /* 스크롤에 따라 배경이 확장되도록 min-height 설정 */
+  margin: 0;
+  background: linear-gradient(to bottom, white 60%, #72a126);
+  background-attachment: fixed;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 910px;
-  background-size: cover;
-  background-origin: border-box;
-  color: var(--mainBlack);
-} */
-
-html {
-  width: 100%;
-  height: 100%;
-  background-attachment: fixed;
-  background: linear-gradient(to bottom, white 60%, #72a126);
-  background-repeat: round;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-origin: border-box;
-  color: var(--mainBlack);
-}
-
-body {
-  background-attachment: fixed;
-  background: linear-gradient(to bottom, white 60%, #72a126);
-  background-repeat: round;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
   background-origin: border-box;
   color: var(--mainBlack);
 }

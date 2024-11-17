@@ -12,6 +12,24 @@
   width: 15%;
   height: 15%;
   cursor: pointer;
+
+  transition: opacity 0.3s ease;
+}
+
+.main_logo:hover {
+  animation: flash 1.5s;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
 }
 
 .img {

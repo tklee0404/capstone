@@ -8,6 +8,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import Menu_Header from "../compoAssets/menu_header";
+import Main_Header from '../compoAssets/main_header.js';
 import { useLocation } from "react-router-dom";
 import "../compoAssets/news_background_style.css";
 import K01 from "../logo_image/emblem_K01.png";
@@ -34,7 +35,6 @@ import fetch_match_plan from "../apiService/news-match_plan";
 import fetch_Issue from "../apiService/news-Issue";
 import fetch_Squad from "../apiService/news-Squad"
 import fetch_Interview from "../apiService/news-Interview";
-
 
 
 function News() {
@@ -280,8 +280,10 @@ function News() {
 //------------------------------------------------------------------------------------------------------------------------------------------------------
   return (
     <div>
-      <Menu_Header></Menu_Header>
-      <img src={teamImgSrc} alt={`${selectedTeam}_logo`}></img>
+      <Main_Header></Main_Header>
+      <div className="selected_team_logo">
+        <img src={teamImgSrc} alt={`${selectedTeam}_logo`}></img>
+      </div>
 
       <div className="news_container_big">
         <div className="news_container">
@@ -381,6 +383,7 @@ function News() {
             <div className="news_block">
               <div className="news_block_intro">
                 인터뷰  
+      
               </div>
               <div className="news_block_info">
                  {Interview.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
@@ -392,9 +395,11 @@ function News() {
        
       </div>
 
-      <div className="keyword_container">
-        <h3 className="keyword_container_intro">-keyword-</h3>
-      </div>
+
+
+
+
+
 
     </div>
 
@@ -404,7 +409,11 @@ function News() {
  
 }
 
-
+/*
+<div className="keyword_container">
+        <h3 className="keyword_container_intro">-keyword-</h3>
+      </div>
+*/
 
 export default News;
 

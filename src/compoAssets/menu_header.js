@@ -12,6 +12,8 @@ import {
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
+import icon1 from "../logo_image/icon_news.png";
+
 function Menu_Header() {
   const [selectedTeam, setSelectedTeam] = useState();
 
@@ -33,9 +35,12 @@ function Menu_Header() {
 
   return (
     <div className="menu_header">
+      
       <div className="menu_button">
         <Link to="/News1">
-          <button className="menu_button" style={getButtonStyle("/News1")}>뉴스</button>
+          <button className="menu_button" style={getButtonStyle("/News1")}>
+            뉴스
+          </button>
         </Link>
       </div>
       <div className="menu_button">
