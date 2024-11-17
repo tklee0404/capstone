@@ -4,6 +4,7 @@
   }
   
 .calendar_page_container_outer {
+    padding-top: 8%;
     height: 100%;
     width: 100%;
     
@@ -14,10 +15,11 @@
     margin-top: 20px;
     width: 1400px;
     height: 78vh;
-    background-color: blue;
+    background-color: #72a126;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-radius: 2em;
 }
 
 .calendar_page_calendar_container {
@@ -25,6 +27,7 @@
     height: 660px;
     background-color: #d9d9d9;
     border-radius: 20px;
+    border: 2px solid #000;
 }
 
 .calendar_page_schedule_container {

@@ -8,6 +8,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import Menu_Header from "../compoAssets/menu_header";
+import Main_Header from '../compoAssets/main_header.js';
 import { useLocation } from "react-router-dom";
 import "../compoAssets/news_background_style.css";
 import "../compoAssets/news_info.css";
@@ -30,7 +31,7 @@ function News2() {
   
   return(
     <div>
-        <Menu_Header></Menu_Header>
+      <Main_Header></Main_Header>
         <div className="news_info_container">
 
             <div className="news_info_catalog">
@@ -38,7 +39,7 @@ function News2() {
             </div>
             <div className="news_info">
                 <ul>
-                {news_data.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline}<p><a href={item.url}>URL:{item.url}</a></p></p> ))}
+                {news_data.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline}<p className="inline_info"><a href={item.url}>URL:{item.url}</a></p></p> ))}
                 </ul>
             </div>
         </div>

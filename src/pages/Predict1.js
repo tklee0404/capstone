@@ -12,6 +12,7 @@ import {
   NavLink,
 } from "react-router-dom";
 import Menu_Header from "../compoAssets/menu_header";
+import Main_Header from '../compoAssets/main_header.js';
 import "../App.css";
 
 import K01 from "../logo_image/emblem_K01.png";
@@ -52,8 +53,7 @@ function Predict1() {
   return(
     
     <div>
-
-      <Menu_Header></Menu_Header>
+      <Main_Header></Main_Header>
       <div className="predict_intro_container">
         <h2 className="predict_intro">-예측하고 싶은 팀을 선택하세요-</h2>
       </div>
@@ -66,6 +66,12 @@ function Predict1() {
                 <option key={index} value={team}>{team}</option>
               ))}
           </select>
+          <Link to="/Predict2">
+          <button className="predict_button">
+            입력하기
+          </button>
+        </Link>
+          
         </div>
       </div>
 
@@ -91,12 +97,9 @@ function Predict1() {
               </div>
           </div>
       </div>
+      
       <div className="predict_button_container">
-        <Link to="/Predict2">
-          <button className="predict_button">
-            입력하기
-          </button>
-        </Link>
+        
       </div>
     </div>
   );

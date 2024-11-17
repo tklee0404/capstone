@@ -1,8 +1,14 @@
+@font-face {
+    font-family: "Giants-Regular";
+    src: url("./Giants-Regular.ttf");
+  }
+
 .news_info_container {
     display: flex;
     flex-direction: column;
     width: 100%;
     
+    padding-top: 8%;
 
     align-items: center;
 }
@@ -19,7 +25,7 @@
     overflow-y: auto; 
     overflow-x: hidden; 
 
-
+    font-family: "Giants-Regular";
 }
 
 .news_info_catalog {
@@ -40,8 +46,15 @@
     margin: 11px;
 }
 
+.inline {
+    font-family: "Giants-Regular";
+}
+
+.inline_info {
+    font-family: "Giants-Regular";
+}
+
 ul {
-    
     list-style-type: square;
 }
 
@@ -53,4 +66,8 @@ li {
 li img {
     width: 10%;
     height: 100%;
+}
+
+p {
+    padding-top: 10px;
 }
