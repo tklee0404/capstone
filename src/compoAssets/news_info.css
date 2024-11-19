@@ -38,6 +38,7 @@
     text-align: center;
     justify-content: space-around;
     align-items: center;
+    font-family: "Giants-Regular";
 }
 
 .news_info_catalog_info {
@@ -52,11 +53,24 @@
 
 .inline_info {
     font-family: "Giants-Regular";
+    transition: color 0.5s ease;
+}
+
+.inline_info:hover {
+    color: red;
+}
+.inline_title {
+    transition: color 0.5s ease;
+}
+.inline_title:hover {
+    color: red;
 }
 
 ul {
     list-style-type: square;
+    
 }
+
 
 li {
     height: 60px;

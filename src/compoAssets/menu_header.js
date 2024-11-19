@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-import icon1 from "../logo_image/icon_news.png";
+
 
 function Menu_Header() {
   const [selectedTeam, setSelectedTeam] = useState();

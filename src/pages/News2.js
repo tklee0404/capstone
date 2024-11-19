@@ -39,7 +39,7 @@ function News2() {
             </div>
             <div className="news_info">
                 <ul>
-                {news_data.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline}<p className="inline_info"><a href={item.url}>URL:{item.url}</a></p></p> ))}
+                {news_data.map((item, index) => ( <p key={index}><div className="inline_title"><h3 className="inline">{index+1}.</h3> {item.headline}</div><p className="inline_info"><a href={item.url}>URL:{item.url}</a></p></p> ))}
                 </ul>
             </div>
         </div>

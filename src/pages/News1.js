@@ -24,6 +24,17 @@ import K10 from "../logo_image/emblem_K10.png";
 import K11 from "../logo_image/emblem_K11.png";
 import K12 from "../logo_image/emblem_K12.png";
 
+import icon1 from "../logo_image/icon_injury.png";
+import icon2 from "../logo_image/icon_club.png";
+import icon3 from "../logo_image/icon_player.png";
+import icon4 from "../logo_image/icon_result.png";
+import icon5 from "../logo_image/icon_before.png";
+import icon6 from "../logo_image/icon_issue.png";
+import icon7 from "../logo_image/icon_trade.png";
+import icon8 from "../logo_image/icon_lineup.png";
+import icon9 from "../logo_image/icon_interview.png";
+
+
 //Link the API Part
 import fetch_token from "../apiService/fetch_token";
 import fetch_injury from "../apiService/news-injury";
@@ -290,7 +301,8 @@ function News() {
           <Link to='/News2' onClick={selectNewsType1} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-               부상
+                <img src={icon1} width="15%" height="15%"></img>
+                <h4>부상</h4>
               </div>
               <div className="news_block_info">
               {/* {injuryData.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline} </p> ))} */} 
@@ -302,7 +314,9 @@ function News() {
           <Link to='/News2' onClick={selectNewsType2} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                구단 관련
+              <img src={icon2} width="15%" height="15%"></img>
+              <h4>구단 관련</h4>
+                
               </div>
               <div className="news_block_info">
                   {club_internal.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
@@ -313,7 +327,8 @@ function News() {
           <Link to='/News2' onClick={selectNewsType3} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                선수 
+              <img src={icon3} width="15%" height="15%"></img>
+              <h4>선수</h4> 
               </div>
               <div className="news_block_info">
                   {player_idv.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3>{item.headline} </p> ))}
@@ -324,7 +339,8 @@ function News() {
           <Link to='/News2' onClick={selectNewsType4} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                경기 결과  
+              <img src={icon4} width="15%" height="15%"></img>
+                <h4>경기 결과</h4>
               </div>
               <div className="news_block_info">
                  {match_result.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
@@ -337,6 +353,7 @@ function News() {
           <Link to='/News2' onClick={selectNewsType5} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
+              <img src={icon5} width="15%" height="15%"></img>
                 경기 전 
               </div>
               <div className="news_block_info">
@@ -348,7 +365,8 @@ function News() {
           <Link to='/News2' onClick={selectNewsType6} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                논란
+              <img src={icon6} width="15%" height="15%"></img>
+              <h4>논란</h4>
               </div>
               <div className="news_block_info">
                  {Issue.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
@@ -360,7 +378,8 @@ function News() {
           <Link to='/News2' onClick={selectNewsType7} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                이적
+              <img src={icon7} width="15%" height="15%"></img>
+              <h4>이적</h4>
               </div>
               <div className="news_block_info">
               {tradeData.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
@@ -371,7 +390,9 @@ function News() {
           <Link to='/News2' onClick={selectNewsType8} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                선발 라인업
+                <img src={icon8} width="15%" height="15%"></img>
+                <h4>선발 라인업</h4>
+                          
               </div>
               <div className="news_block_info">
                 {Squad.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
@@ -382,7 +403,8 @@ function News() {
           <Link to='/News2' onClick={selectNewsType9} className="link_reset">
             <div className="news_block">
               <div className="news_block_intro">
-                인터뷰  
+              <img src={icon9} width="15%" height="15%"></img>
+              <h4>인터뷰</h4> 
       
               </div>
               <div className="news_block_info">
