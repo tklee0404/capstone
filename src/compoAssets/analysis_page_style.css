@@ -3,8 +3,16 @@
   src: url("./Giants-Regular.ttf");
 }
 
+.error_message {
+  font-family: "Giants-Regular";
+  color: red;
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
 .analysis_intro_container {
   width: 100%;
+  
   padding-top: 15%;
   text-align: center;
   display: flex;

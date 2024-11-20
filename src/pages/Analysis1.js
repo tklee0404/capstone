@@ -30,6 +30,7 @@ import "../App.css";
 
 function Analysis1() {
   const [month, setMonth] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -38,12 +39,20 @@ function Analysis1() {
 
       if ((number >= 1 && number <= 12) || value === "") {
         setMonth(value);
+        setError("");
       }
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    if(!month) {
+      e.preventDefault();
+      setError("입력값이 필요합니다!");
+      return;
+    }
+
     console.log("입력 숫자 : ", month);
+    setError("");
   };
 
   return (
@@ -63,9 +72,10 @@ function Analysis1() {
         />
         <h3>달</h3>
         </div>
+        {error && <p className="error_message">{error}</p>}
       </div>
       <div className="analysis_button_container">
-        <Link to="/Analysis2">
+        <Link to={month ? "/Analysis2" : "#"}>
           <button className="analysis_button" onClick={handleSubmit}>
             입력하기
           </button>

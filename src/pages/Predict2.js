@@ -71,7 +71,9 @@ function Predict2() {
                         <div className="vs">VS</div>
                         <div><img src={teamImages[opponentTeam]} alt={`${opponentTeam} logo`}></img></div>
                     </div>
-                    <div className="predict_page_result_container"></div>
+                    <div className="predict_page_result_container">
+                      
+                    </div>
                 </div>
             </div>
         </div>

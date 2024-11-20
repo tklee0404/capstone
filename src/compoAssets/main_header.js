@@ -14,7 +14,6 @@ import {
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-import icon1 from "../logo_image/icon_news.png";
 
 
 function Main_Header() {
@@ -41,7 +40,7 @@ function Main_Header() {
 
       <div className="main_header">
         <img className="header_icon" src={icon} alt="header_icon"></img>
-        <h4 className="service_name">SPORTS HOLIC</h4>  
+        <h3 className="service_name">SPORTS HOLIC</h3>  
       </div>
 
       <div className="menu_header">
