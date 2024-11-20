@@ -10,7 +10,7 @@ import {
   NavLink,
 } from "react-router-dom";
 import Main_Header from "../compoAssets/main_header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 
 import 울산 from "../logo_image/emblem_K01.png";
@@ -27,6 +27,11 @@ import 수원FC from "../logo_image/emblem_K11.png";
 import 김천 from "../logo_image/emblem_K12.png";
 
 function Home() {
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `SportsHolic`;
+  }, []);
+
   const selectTeam1 = () => {
     localStorage.setItem(
       "teamSelect",

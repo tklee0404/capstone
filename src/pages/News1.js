@@ -49,6 +49,11 @@ import fetch_Interview from "../apiService/news-Interview";
 
 
 function News() {
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `SportsHolic 뉴스`;
+  }, []);
+
   const [selectedTeam, setSelectedTeam] = useState();
 
   useEffect(() => {

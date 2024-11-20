@@ -29,6 +29,11 @@ import K11 from "../logo_image/emblem_K11.png";
 import K12 from "../logo_image/emblem_K12.png";
 
 function Predict1() {
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `SportsHolic 예측`;
+  }, []);
+
   const [selectedTeam, setSelectedTeam] = useState("");
   const [otherTeams, setOtherTeams] = useState([]);
 

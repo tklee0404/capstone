@@ -29,6 +29,12 @@ import K12 from "../logo_image/emblem_K12.png";
 import "../App.css";
 
 function Analysis1() {
+
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `SportsHolic 분석`;
+  }, []);
+
   const [month, setMonth] = useState("");
   const [error, setError] = useState("");
 
