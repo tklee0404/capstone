@@ -12,7 +12,7 @@ import {
 import { useLocation } from "react-router-dom";
 import Menu_Header from "../compoAssets/menu_header";
 import Main_Header from '../compoAssets/main_header.js';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../App.css";
 import "../compoAssets/predict_result_page_style.css";
 
@@ -33,6 +33,11 @@ function Predict2() {
 
     const [selectedTeam, setSelectedTeam] = useState("");
     const [opponentTeam, setOpponentTeam] = useState("");
+    const [isFlipped, setIsFlipped] = useState({
+      win: false,
+      lose: false,
+      draw: false,
+    });
 
 
     const teamImages = {
@@ -61,22 +66,77 @@ function Predict2() {
         }
       }, []);
 
+      const handleCardClick = (cardType) => {
+        setIsFlipped((prev) => ({
+          ...prev,
+          [cardType]: !prev[cardType], // 해당 카드의 상태만 변경
+        }));
+      };
+
+
     return(
         <div>
           <Main_Header></Main_Header>
             <div className="predict_page_container_outer">
                 <div className="predict_page_container_big">
                     <div className="predict_page_logo_container">
-                        <div><img src={teamImages[selectedTeam]} alt={`${selectedTeam} logo`}></img></div>
+                        <div><img className = "predict_result_logo" src={teamImages[selectedTeam]} alt={`${selectedTeam} logo`}></img></div>
                         <div className="vs">VS</div>
-                        <div><img src={teamImages[opponentTeam]} alt={`${opponentTeam} logo`}></img></div>
+                        <div><img className = "predict_result_logo" src={teamImages[opponentTeam]} alt={`${opponentTeam} logo`}></img></div>
                     </div>
                     <div className="predict_page_result_container">
-                      
+                      <div className="predict_result_value_container">
+                        <div className={`predict_card ${isFlipped.win ? "is-flipped" : ""}`} 
+                            onClick={() => handleCardClick("win")}> 
+                          <div className="predict_result_win_card_front">
+                            ?
+                          </div>
+                          <div className="predict_result_win_card_back">
+                            <div className="predict_result_win_card_back_title">
+                              WIN
+                            </div>
+                            <div className="predict_result_win_card_back_value">
+                              NN %
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="predict_result_value_container">
+                        <div className={`predict_card ${isFlipped.lose ? "is-flipped" : ""}`}
+                            onClick={() => handleCardClick("lose")}>
+                          <div className="predict_result_lose_card_front">
+                            ?
+                          </div>
+                          <div className="predict_result_lose_card_back">
+                              <div className="predict_result_lose_card_back_title">
+                                LOSE
+                              </div>
+                              <div className="predict_result_lose_card_back_value">
+                                NN %
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="predict_result_value_container">
+                        <div className={`predict_card ${isFlipped.draw ? "is-flipped" : ""}`}
+                            onClick={() => handleCardClick("draw")}>
+                          <div className="predict_result_draw_card_front">
+                            ?
+                          </div>
+                          <div className="predict_result_draw_card_back">
+                            <div className="predict_result_draw_card_back_title">
+                              DRAW
+                            </div>
+                            <div className="predict_result_draw_card_back_value">
+                              NN %
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     );
 
 }

@@ -34,81 +34,102 @@ function Predict1() {
     titleElement.innerHTML = `SportsHolic 예측`;
   }, []);
 
-  const [selectedTeam, setSelectedTeam] = useState("");
-  const [otherTeams, setOtherTeams] = useState([]);
+  const [selectedOpponentTeam, setSelectedOpponentTeam] = useState(""); // 상대 팀 상태
+  const [errorMessage, setErrorMessage] = useState(""); // 에러 메시지 상태
+  const navigate = useNavigate(); // 페이지 이동을 위한 useNavigate
 
   const teams = [
-    "울산", "포항", "제주", "전북", "서울", "대전", "대구",
-    "인천", "강원", "광주", "수원FC", "김천"
+    "울산",
+    "포항",
+    "제주",
+    "전북",
+    "서울",
+    "대전",
+    "대구",
+    "인천",
+    "강원",
+    "광주",
+    "수원FC",
+    "김천",
   ];
+
+  const [otherTeams, setOtherTeams] = useState([]);
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("teamSelect"));
     if (storedData && storedData.selectedTeam) {
-      setSelectedTeam(storedData.selectedTeam);
-      setOtherTeams(teams.filter(team => team !== storedData.selectedTeam)); // 선택된 팀을 제외한 나머지 팀만 설정
+      setOtherTeams(teams.filter((team) => team !== storedData.selectedTeam)); // 선택된 팀 제외
     }
   }, []);
 
   const handleTeamChange = (e) => {
-    const selectedOpponentTeam = e.target.value;
-    localStorage.setItem("opponentTeamSelect", JSON.stringify({ selectedOpponentTeam }));
+    const team = e.target.value;
+    setSelectedOpponentTeam(team);
+    setErrorMessage(""); // 선택 시 에러 메시지 초기화
   };
 
-  return(
-    
+  const handleButtonClick = () => {
+    if (!selectedOpponentTeam) {
+      setErrorMessage("팀을 선택해야 합니다."); // 에러 메시지 출력
+      return;
+    }
+    localStorage.setItem(
+      "opponentTeamSelect",
+      JSON.stringify({ selectedOpponentTeam })
+    ); // 선택값 저장
+    navigate("/Predict2"); // 정상적으로 이동
+  };
+
+  return (
     <div>
-      <Main_Header></Main_Header>
+      <Main_Header />
       <div className="predict_intro_container">
         <h2 className="predict_intro">-예측하고 싶은 팀을 선택하세요-</h2>
       </div>
 
       <div className="predict_input_container">
         <div className="predict_input_row">
-          <select className="predict_dropdown" onChange={handleTeamChange}>
-              <option value="">팀을 선택하세요</option>
-              {otherTeams.map((team, index) => (
-                <option key={index} value={team}>{team}</option>
-              ))}
+          <select
+            className="predict_dropdown"
+            value={selectedOpponentTeam}
+            onChange={handleTeamChange}
+          >
+            <option value="">팀을 선택하세요</option>
+            {otherTeams.map((team, index) => (
+              <option key={index} value={team}>
+                {team}
+              </option>
+            ))}
           </select>
-          <Link to="/Predict2">
-          <button className="predict_button">
+          <button className="predict_button" onClick={handleButtonClick}>
             입력하기
           </button>
-        </Link>
-          
         </div>
+        {errorMessage && <p className="error_message">{errorMessage}</p>} {/* 에러 메시지 */}
       </div>
 
       <h1>-가장 최근 경기 예측 결과-</h1>
 
       <div className="nearest_game_container">
-          <div className="nearest_game_result_team">
-              <img src={K01}></img>
-              <img src={K02}></img>
-          </div>
+        <div className="nearest_game_result_team">
+          <img src={K01} alt="Team 1" />
+          <img src={K02} alt="Team 2" />
+        </div>
 
-          <div className="nearest_game_result_score"> 
-              <div className="team1_container">
-                <div className="team1_score">
-                  1 
-                </div>
-              </div>
-              
-              <div className="team2_container">
-                <div className="team2_score">
-                  2
-                </div>
-              </div>
+        <div className="nearest_game_result_score">
+          <div className="team1_container">
+            <div className="team1_score">1</div>
           </div>
+            :
+          <div className="team2_container">
+            <div className="team2_score">2</div>
+          </div>
+        </div>
       </div>
-      
-      <div className="predict_button_container">
-        
-      </div>
+
+      <div className="predict_button_container"></div>
     </div>
   );
-
 }
 
 export default Predict1;
