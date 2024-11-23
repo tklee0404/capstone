@@ -3,6 +3,12 @@
   src: url("./Giants-Regular.ttf");
 }
 
+.error_message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
 .predict_intro_container {
     width: 100%;
     padding-top: 15%;
@@ -65,9 +71,11 @@
   
   .predict_dropdown{
     font-family: "Giants-Regular";
-    width: 150px;
+    width: 60%;
     height: 50px;
     text-align: center;
+
+    border-radius: 10px;
   }
   
   .nearest_game_container {
@@ -105,7 +113,7 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
 h1 {

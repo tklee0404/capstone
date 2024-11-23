@@ -14,7 +14,7 @@ function Analysis_Table() {
       <div className="analysis_result_table_wrapper">
         {tableData.map((dataChunk, index) => (
           <table key={index} className="analysis_result_table_style">
-            <thead style={{ backgroundColor: "green" }}>
+            <thead style={{ backgroundColor: "green" }}> 
               <tr>
                 <th style={{ width: "30%", border: "1px solid black", padding: "8px" }}>이름</th>
                 <th style={{ width: "70%", border: "1px solid black", padding: "8px" }}>수</th>

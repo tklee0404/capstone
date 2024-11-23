@@ -34,6 +34,11 @@ import K12 from "../logo_image/emblem_K12.png";
 
 function Calendar() {
 
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `SportsHolic 캘린더`;
+  }, []);
+
   const calendarRef = useRef(null);
 
   const handleScreenShot = async () => {
@@ -67,13 +72,14 @@ function Calendar() {
           </div>
           <div className="calendar_page_schedule_container">
             <div className="calendar_match_logo_container">
-              <img src={K01}></img>
-              <img src={K02}></img>
+              <img src={K01} style={{ width: "40%", height:"auto", padding: "8px" }}></img>
+              <img src={K02} style={{ width: "40%", height:"auto", padding: "8px" }}></img>
             </div>
             <div className="calendar_match_result_container">
               <div className="team1_score">
                 1
               </div>
+              <div>:</div>
               <div className="team2_score">
                 2
               </div>

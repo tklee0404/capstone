@@ -5,13 +5,14 @@
 
 .react-calendar {
     width: 100%;
-    height: 660px;
+    height: 100%;
     max-width: 100%;
     background: #d9d9d9;
     border: 1px solid #a0a096;
     font-family: 'Arial', 'Helvetica', sans-serif;
-    line-height: 4em;
+    line-height: 2.6em;
     border-radius: 20px;
+    
   }
   
   .react-calendar--doubleView {
@@ -43,6 +44,7 @@
     border: 0;
     outline: none;
     font-family: "Giants-Regular";
+    
   }
   
   .react-calendar button:enabled:hover {
@@ -52,7 +54,8 @@
   .react-calendar__navigation {
     display: flex;
     height: 44px;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
+    
     
   }
   
@@ -60,19 +63,36 @@
     min-width: 44px;
     background: none;
     width: 100%;
-    font-size: large;
+    font-size:0.85em;
     border-radius: 20px;
+
+    outline: none;
   }
   
   .react-calendar__navigation button:disabled {
-    background-color: #f0f0f0;
+    background-color: #d9d9d9;
   }
+
+  .react-calendar__navigation button:enabled:hover {
+    background-color: #72a126
+  }
+  .react-calendar__navigation button:enabled:focus {
+    background-color: none;
+  }
+
+
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
   
+  /*
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
-    background-color: #e6e6e6;
+    background-color: #72a126;
   }
-  
+  */
+
+
   .react-calendar__month-view__weekdays {
     
     text-align: center;
@@ -83,9 +103,10 @@
   }
   
   .react-calendar__month-view__weekdays__weekday {
-    padding: 0.5em;
+    
+    padding: 0.1em;
     font-family: "Giants-Regular";
-    font-size: 2em;
+    font-size: 20px;
   }
   
   .react-calendar__month-view__weekNumbers .react-calendar__tile {
@@ -122,6 +143,7 @@
     font: inherit;
     font-size: 1em;
     font-family: "Giants-Regular";
+    height: auto; /* 필요시 타일 높이 자동 조정 */
   }
   
   .react-calendar__tile:disabled {
