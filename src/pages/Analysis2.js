@@ -31,16 +31,19 @@ import "../App.css";
 import "../compoAssets/analysis_result_page_style.css";
 
 function Analysis2() {
+
   return (
     <div>
-      <Main_Header></Main_Header>
+     <Main_Header></Main_Header>
+
       <div className="analysis_result_container">
-        
-        <div className="analysis_result_table_container">
+        <div>
           <div className="analysis_result_table">
             <Analysis_Table></Analysis_Table>
           </div>
         </div>
+
+
         <div className="analysis_result_graph_container">
           <div className="analysis_result_graph">
             <Analysis_Graph></Analysis_Graph>

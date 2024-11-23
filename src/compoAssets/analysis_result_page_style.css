@@ -4,8 +4,8 @@
 }
 
 .analysis_result_container {
-    
-    
+  
+
     width: 90%;
     
     align-items: center;
@@ -15,7 +15,7 @@
     height: 80vh;
     justify-content: space-evenly;
 
-    padding-top: 15%;
+    padding-top: 20%;
 
   }
   
@@ -24,18 +24,21 @@
     display: flex;
     align-items: center;
     
-    width: 900px;
+    width: 70%;
     /*width: 50%;*/
-    height: 700px;
+    height: 100;
     background-color: #d9d9d9;
     border: 1px solid #000;
     border-radius: 1rem;
     flex-grow: 0;
-    flex-shrink: 0;
-  }
 
+  }
+  
   .analysis_result_table {
-    margin-left: 40px;
+    background-color:#d9d9d9 ;
+    max-width: 100%;
+    max-height: 80vh; /* 80% 的视窗高度，确保不会过高 */
+    overflow: auto;
   }  
 
   .analysis_result_table_wrapper {
@@ -43,7 +46,7 @@
     justify-content: center;
     gap: 20px;
   }
-
+  
   .analysis_result_table_style {
     width: 250px;
     height: 600px;
