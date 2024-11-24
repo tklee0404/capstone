@@ -9,7 +9,7 @@ import {
   Routes,
   NavLink,
 } from "react-router-dom";
-import Menu_Header from "../compoAssets/menu_header";
+import Menu_Header from "../compoAssets/menu_header.js";
 import Main_Header from '../compoAssets/main_header.js';
 import Analysis_Graph from "../compoAssets/analysis_result_graph.js";
 import Analysis_Table from "../compoAssets/analysis_result_table.js";
