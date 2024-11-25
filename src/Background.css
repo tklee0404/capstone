@@ -1,0 +1,7 @@
+.Background_gradient {
+    background-image: linear-gradient(to bottom, white 60%, #72A126);
+    background-position: top center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}

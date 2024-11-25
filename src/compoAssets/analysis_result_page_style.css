@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Giants-Regular";
+  src: url("./Giants-Regular.ttf");
+}
+
+.analysis_result_container {
+  
+
+    width: 90%;
+    
+    align-items: center;
+    margin-left: 5%;
+    display: flex;
+    border-radius: 1rem;
+    height: 80vh;
+    justify-content: space-evenly;
+
+    padding-top: 5%;
+
+  }
+  
+  .analysis_result_table_container {
+    
+    display: flex;
+    align-items: center;
+    
+    width: 70%;
+    /*width: 50%;*/
+    height: 100;
+    background-color: #d9d9d9;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    flex-grow: 0;
+
+  }
+  
+  .analysis_result_table {
+    background-color:#d9d9d9 ;
+    max-width: 100%;
+    max-height: 80vh; /* 80% 的视窗高度，确保不会过高 */
+    overflow: auto;
+  }  
+
+  .analysis_result_table_wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .analysis_result_table_style {
+    width: 250px;
+    height: 600px;
+    border-collapse: collapse;
+    font-family: "Giants-Regular";
+    font-size: 13px;
+  }
+  
+  .analysis_result_graph_container {
+    display: flex;
+    align-items: center;
+    width: 800px;
+    /*width: 43%;*/
+    height: 650px;
+    background-color: #d9d9d9;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "Giants-Regular";
+  }
+
+.analysis_result_graph {
+  margin-left: 5%;
+}

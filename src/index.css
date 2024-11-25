@@ -1,0 +1,32 @@
+:root {
+  --primaryColor: #72a126;
+  --secondColor: #e9b872;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainRed: #c45151;
+  --mainGreen: #4caf50;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh; /* 스크롤에 따라 배경이 확장되도록 min-height 설정 */
+  margin: 0;
+  background: linear-gradient(to bottom, white 60%, #72a126);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  color: var(--mainBlack);
+}
+
+h1 {
+  margin: 1rem 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

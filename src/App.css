@@ -1,0 +1,44 @@
+.main-container {
+  margin: 0 auto;
+  max-width: 1280;
+  width: 100%;
+}
+
+.main_logo {
+  width: 150px; 
+  height: 150px;
+  object-fit: contain; 
+  cursor: pointer;
+  margin: 30px; 
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.main_logo:hover {
+  transform: scale(1.1); 
+}
+
+
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.img {
+  display: block;
+}
+.main_wrap {
+  display: flex; /* 强制使用弹性布局 */
+  margin-top: 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+

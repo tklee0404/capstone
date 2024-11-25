@@ -1,0 +1,315 @@
+@font-face {
+    font-family: "Giants-Regular";
+    src: url("./Giants-Regular.ttf");
+  }
+.predict_page_container_outer {
+    padding-top: 3%;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.predict_page_container_big {
+    margin-top: 50px;
+    /*width: 1400px;*/
+    width: 90%;
+    height: 75vh;
+    background-color: #72a126;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+    margin-left: 5%;
+    border-radius: 2rem;
+}
+
+.predict_page_logo_container {
+    /*
+    width: 300px;
+    height: 600px;
+    */
+
+    width: 20%;
+    height: 85%;
+    background-color: #d9d9d9;
+    border: 2px solid black;
+
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.predict_page_result_container {
+    width: 60%;
+    height: 85%;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.predict_result_logo {
+    width: 100%;
+    height: auto;
+}
+
+.predict_result_value_container {
+    width: 25%;
+    height: 80%;
+    
+    border-radius: 20px;
+    perspective: 1000px;
+    
+    
+}
+
+.predict_card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* 3D 공간 보존 */
+    transition: transform 0.5s; /* 부드러운 회전 효과 */
+}
+
+.predict_card.is-flipped {
+    transform: rotateY(180deg); /* 뒤집기 효과 */
+}
+
+.predict_result_win_card_front,
+.predict_result_win_card_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; /* 뒷면 숨기기 */
+    border-radius: 20px;
+}
+
+
+.predict_result_win_card_front {
+    background-color: #72a126;
+    font-family: "Giants-Regular";
+    border-radius: 20px;
+    border: 10px double #d9d9d9;
+    width: 100%;
+    height: 100%;
+    color: #d9d9d9;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 10vw;
+    
+    cursor: pointer;
+
+
+}
+
+.predict_result_win_card_back {
+    background-color: #d9d9d9;
+    font-family: "Giants-Regular";
+    border-radius: 20px;
+    border: 2px solid #000;
+    width: 100%;
+    height: 100%;
+    color: #d9d9d9;
+    
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 2vw;
+
+    transform: rotateY(180deg);
+}
+
+.predict_result_lose_card_front,
+.predict_result_lose_card_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; /* 뒷면 숨기기 */
+    border-radius: 20px;
+}
+
+
+.predict_result_lose_card_front {
+    background-color: #72a126;
+    font-family: "Giants-Regular";
+    border-radius: 20px;
+    border: 10px double #d9d9d9;
+    width: 100%;
+    height: 100%;
+    color: #d9d9d9;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 10vw;
+    
+    cursor: pointer;
+
+
+}
+
+.predict_result_lose_card_back {
+    background-color: #d9d9d9;
+    font-family: "Giants-Regular";
+    border-radius: 20px;
+    border: 2px solid #000;
+    width: 100%;
+    height: 100%;
+    color: #d9d9d9;
+    
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 2vw;
+
+    transform: rotateY(180deg);
+}
+
+.predict_result_draw_card_front,
+.predict_result_draw_card_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; /* 뒷면 숨기기 */
+    border-radius: 20px;
+}
+
+
+.predict_result_draw_card_front {
+    background-color: #72a126;
+    font-family: "Giants-Regular";
+    border-radius: 20px;
+    border: 10px double #d9d9d9;
+    width: 100%;
+    height: 100%;
+    color: #d9d9d9;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 10vw;
+    
+    cursor: pointer;
+
+
+}
+
+.predict_result_draw_card_back {
+    background-color: #d9d9d9;
+    font-family: "Giants-Regular";
+    border-radius: 20px;
+    border: 2px solid #000;
+    width: 100%;
+    height: 100%;
+    color: #d9d9d9;
+    
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 2vw;
+
+    transform: rotateY(180deg);
+}
+
+
+.vs {
+    font-family: "Giants-Regular";
+    font-size: 5vh;
+}
+
+
+
+
+/* ------------------------------- */
+
+.predict_result_win_card_back_title {
+    width: 100%;
+    height: 30%;
+    border-radius: 18.5px;
+    background-color: red;
+    font-size: 200%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.predict_result_win_card_back_value {
+    width: 100%;
+    height: 70%;
+    color: #000;
+    font-size: 150%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.predict_result_lose_card_back_title {
+    width: 100%;
+    height: 30%;
+    border-radius: 18.5px;
+    background-color: blue;
+    font-size: 200%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.predict_result_lose_card_back_value {
+    width: 100%;
+    height: 70%;
+    color: #000;
+    font-size: 150%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.predict_result_draw_card_back_title {
+    width: 100%;
+    height: 30%;
+    border-radius: 18.5px;
+    background-color: grey;
+    font-size: 200%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.predict_result_draw_card_back_value {
+    width: 100%;
+    height: 70%;
+    color: #000;
+    font-size: 150%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
