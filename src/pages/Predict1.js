@@ -11,8 +11,7 @@ import {
   Routes,
   NavLink,
 } from "react-router-dom";
-import Menu_Header from "../compoAssets/menu_header";
-import Main_Header from '../compoAssets/main_header.js';
+import Headerbar from "../UI/header.js";
 import "../App.css";
 
 import K01 from "../logo_image/emblem_K01.png";
@@ -82,7 +81,7 @@ function Predict1() {
 
   return (
     <div>
-      <Main_Header />
+      <Headerbar />
       <div className="predict_intro_container">
         <h2 className="predict_intro">-예측하고 싶은 팀을 선택하세요-</h2>
       </div>

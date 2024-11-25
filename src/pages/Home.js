@@ -9,7 +9,7 @@ import {
   Routes,
   NavLink,
 } from "react-router-dom";
-import Main_Header from "../compoAssets/main_header";
+
 import { useState, useEffect } from "react";
 import "../App.css";
 
@@ -109,20 +109,10 @@ function Home() {
   return (
     <div className="main_wrap">
       <Link to="/News1">
-        <img
-          className="main_logo"
-          src={울산}
-          alt="team1_logo"
-          onClick={selectTeam1}
-        ></img>
+        <img className="main_logo" src={울산} alt="team1_logo" onClick={selectTeam1}></img>
       </Link>
       <Link to="/News1">
-        <img
-          className="main_logo"
-          src={포항}
-          alt="team2_logo"
-          onClick={selectTeam2}
-        ></img>
+        <img className="main_logo"  src={포항} alt="team2_logo" onClick={selectTeam2} ></img>
       </Link>
       <Link to="/News1">
         <img className="main_logo" src={제주} alt="team3_logo" onClick={selectTeam3}></img>

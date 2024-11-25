@@ -5,20 +5,18 @@
 }
 
 .main_logo {
-  margin-top: 70px;
-  padding-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  width: 15%;
-  height: 15%;
+  width: 150px; 
+  height: 150px;
+  object-fit: contain; 
   cursor: pointer;
-
-  transition: opacity 0.3s ease;
+  margin: 30px; 
+  transition: transform 0.3s ease, opacity 0.3s ease; 
 }
 
 .main_logo:hover {
-  animation: flash 1.5s;
+  transform: scale(1.1); 
 }
+
 
 @keyframes flash {
   0% {
@@ -35,10 +33,12 @@
 .img {
   display: block;
 }
-
 .main_wrap {
-  width: 90%;
-  text-align: center;
-  margin: 0 auto;
-  display: block;
+  display: flex; /* 强制使用弹性布局 */
+  margin-top: 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
+

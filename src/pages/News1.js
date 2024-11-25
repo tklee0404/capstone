@@ -7,8 +7,6 @@ import {
   useNavigate,
   BrowserRouter,
 } from "react-router-dom";
-import Menu_Header from "../compoAssets/menu_header";
-import Main_Header from '../compoAssets/main_header.js';
 import { useLocation } from "react-router-dom";
 import "../compoAssets/news_background_style.css";
 import K01 from "../logo_image/emblem_K01.png";
@@ -47,6 +45,7 @@ import fetch_Issue from "../apiService/news-Issue";
 import fetch_Squad from "../apiService/news-Squad"
 import fetch_Interview from "../apiService/news-Interview";
 
+import Headerbar from "../UI/header.js";
 
 function News() {
   useEffect(() => {
@@ -296,7 +295,7 @@ function News() {
 //------------------------------------------------------------------------------------------------------------------------------------------------------
   return (
     <div>
-      <Main_Header></Main_Header>
+      <Headerbar />
       <div className="selected_team_logo">
         <img src={teamImgSrc} alt={`${selectedTeam}_logo`}></img>
       </div>

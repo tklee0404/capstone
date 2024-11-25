@@ -18,7 +18,6 @@ import Predict2 from './pages/Predict2.js';
 
 
 function App() {
-
   return(
     <main className="main-container">
 

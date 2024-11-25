@@ -10,8 +10,7 @@ import {
   Routes,
   NavLink,
 } from "react-router-dom";
-import Menu_Header from "../compoAssets/menu_header";
-import Main_Header from '../compoAssets/main_header.js';
+import Headerbar from "../UI/header.js";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import K01 from "../logo_image/emblem_K01.png";
@@ -63,7 +62,7 @@ function Analysis1() {
 
   return (
     <div>
-      <Main_Header></Main_Header>
+      <Headerbar />
       <div className="analysis_intro_container">
         <h2 className="analysis_intro">-분석하고 싶은 기간을 입력하세요-</h2>
       </div>

@@ -7,8 +7,7 @@ import {
   useNavigate,
   BrowserRouter,
 } from "react-router-dom";
-import Menu_Header from "../compoAssets/menu_header";
-import Main_Header from '../compoAssets/main_header.js';
+import Headerbar from "../UI/header.js";
 import { useLocation } from "react-router-dom";
 import "../compoAssets/news_background_style.css";
 import "../compoAssets/news_info.css";
@@ -31,7 +30,7 @@ function News2() {
   
   return(
     <div>
-      <Main_Header></Main_Header>
+      <Headerbar />
         <div className="news_info_container">
 
             <div className="news_info_catalog">

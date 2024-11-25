@@ -10,8 +10,7 @@ import {
   NavLink,
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import Menu_Header from "../compoAssets/menu_header";
-import Main_Header from '../compoAssets/main_header.js';
+import Headerbar from "../UI/header.js";
 import { useState, useEffect, useRef } from "react";
 import "../App.css";
 import "../compoAssets/calendar_page_style.css";
@@ -63,7 +62,7 @@ function Calendar() {
 
   return(
     <div>
-      <Main_Header></Main_Header>
+      <Headerbar />
       <div className="calendar_page_container_outer" >
         <div className="calendar_page_container_big" ref={calendarRef}>
 

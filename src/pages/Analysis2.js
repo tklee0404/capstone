@@ -9,8 +9,7 @@ import {
   Routes,
   NavLink,
 } from "react-router-dom";
-import Menu_Header from "../compoAssets/menu_header.js";
-import Main_Header from '../compoAssets/main_header.js';
+import Headerbar from "../UI/header.js";
 import Analysis_Graph from "../compoAssets/analysis_result_graph.js";
 import Analysis_Table from "../compoAssets/analysis_result_table.js";
 import { useEffect, useState } from "react";
@@ -34,7 +33,7 @@ function Analysis2() {
 
   return (
     <div>
-     <Main_Header></Main_Header>
+      <Headerbar />
 
       <div className="analysis_result_container">
         <div>
