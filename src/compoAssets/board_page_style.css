@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "Giants-Regular";
+    src: url("./Giants-Regular.ttf");
+  }
+  
+
+.board_page_biggest {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+
+    /*background-color: aqua;*/
+}
+
+.board_page_outer_container {
+    font-family: "Giants-Regular";
+    width: 60%;
+    height: 900px;
+    background-color: #d9d9d9;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.board_page_board_container {
+    width: 80%;
+    height: 500px;
+    background-color: white;
+    padding: 2%;
+    border-radius: 15px;
+}
+
+.board_page_board {
+    width: 100%;
+    
+}
+
+.board_page_board_itself {
+    border: 1px solid #000;
+
+    width: 100%;
+    
+    max-height: 400px;
+
+
+
+
+    table-layout: fixed;
+}
+
+.board_page_paging_container {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #000;
+    width: 100%;
+}
+
+
+
+thead {
+    border-bottom: 1px solid #000;
+    background-color: #72A126;
+
+    
+}
+
+/*
+th {
+    border: 1px solid #000;
+}
+*/
+
+tr {
+    border-bottom: 1px solid #000;
+    
+    
+}
+
+td {
+    border: 1px solid #000;
+    height: 40px;
+}
+
+
+.article_nickname,
+.article_title {
+    overflow: hidden; /* 넘치는 텍스트를 숨김 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 ...으로 표시 */
+    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
+    width: 100%; /* 셀 안에서 가로 공간 꽉 채우기 */
+    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*--------------------------------------*/
+
+.board_page_write_container {
+    width: 80%;
+    height: 400px;
+    background-color: gold;
+
+    border-radius: 15px;
+}
