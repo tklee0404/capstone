@@ -8,18 +8,17 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
-import Headerbar from "../UI/header.js";
 import "../compoAssets/board_page_style.css";
+import Headerbar from "../UI/header.js";
 
 function Board2 () {
+
 
     return (
         <div>
             <Headerbar></Headerbar>
-            <div></div>
+            <div>ddd</div>
         </div>
-
     );
 }
 

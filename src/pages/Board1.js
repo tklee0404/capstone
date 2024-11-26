@@ -72,6 +72,7 @@ function Board1() {
                     <button className="w-10/12 h-1/6 bg-gray-300 mt-2 border border-black rounded-md">POST / 올리기</button>
                   </div>
                 </div>
+                <a ></a>
               </div>
             </div>
         </div>
