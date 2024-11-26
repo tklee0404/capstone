@@ -8,7 +8,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import "../compoAssets/board_page_style.css";
 import Headerbar from "../UI/header.js";
 
 function Board2 () {
