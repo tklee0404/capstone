@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/flyonui/dist/js/*.js"
   ],
   theme: {
     extend: {
@@ -10,5 +11,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("flyonui"),
+    require("flyonui/plugin") // Require only if you want to use FlyonUI JS component
+  ]
 }
