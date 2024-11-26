@@ -17,7 +17,7 @@ function Board2 () {
     return (
         <div>
             <Headerbar></Headerbar>
-            <div></div>
+            <div>ddd</div>
         </div>
     );
 }
