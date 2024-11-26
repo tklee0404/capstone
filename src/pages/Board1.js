@@ -68,7 +68,7 @@ function Board1() {
                   <div className="flex flex-col items-center w-full bg-white h-full border border-black rounded-2xl">
                     <input className="px-2 w-10/12 h-1/12 bg-gray-300 mt-2 border border-black rounded-md" placeholder="nickname 닉네임"></input>
                     <input className="px-2 w-10/12 h-1/12 bg-gray-300 mt-2 border border-black rounded-md" placeholder="title 제목"></input>
-                    <textarea className="px-2 w-10/12 h-4/6 bg-gray-300 mt-2 border border-black rounded-md"></textarea>
+                    <textarea className="px-2 w-10/12 h-3/5 bg-gray-300 mt-2 border border-black rounded-md"></textarea>
                     <button className="w-10/12 h-1/6 bg-gray-300 mt-2 border border-black rounded-md">POST / 올리기</button>
                   </div>
                 </div>
