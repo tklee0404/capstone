@@ -15,7 +15,8 @@ import Predict1 from './pages/Predict1.js';
 import Predict2 from './pages/Predict2.js';
 import testasd from "./pages/testasd.js";
 import Card5 from "./pages/testasd.js";
-
+import Board1 from './pages/Board1.js';
+import Board2 from './pages/Board2.js';
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
         <Route path="/Analysis2" element={<Analysis2 />}></Route>
         <Route path="/Predict2" element={<Predict2 />}></Route>
         <Route path="/test" element={<Card5 />}></Route>
+        <Route path="/Board1" element={<Board1 />}></Route>
+        <Route path="/Board2" element={<Board2 />}></Route>
       </Routes>
 
       </BrowserRouter>
