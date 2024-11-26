@@ -17,8 +17,6 @@ import testasd from "./pages/testasd.js";
 import Card5 from "./pages/testasd.js";
 import Board1 from './pages/Board1.js';
 import Board2 from './pages/Board2.js';
-import Board1 from './pages/Board1.js';
-import Board2 from './pages/Board2.js';
 
 
 

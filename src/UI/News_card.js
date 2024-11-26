@@ -1,21 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
-
-=======
 import Headerbar from "../UI/header.js";
->>>>>>> 72888472871be98514bffc7b45544cf12bbf586a
 
 export default function CardExample() {
     return (
         
         <div>
-<<<<<<< HEAD
-=======
-            <div>
-                <Headerbar />
-            </div>
-           
->>>>>>> 72888472871be98514bffc7b45544cf12bbf586a
+              
             <div class="card removing:translate-x-5 removing:opacity-0 w-full transition duration-300 ease-in-out" id="card-dismiss" >
               
                 <div class="card-body">
