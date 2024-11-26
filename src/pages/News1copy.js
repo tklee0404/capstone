@@ -47,7 +47,6 @@ import fetch_Interview from "../apiService/news-Interview.js";
 
 import Headerbar from "../UI/header.js";
 import News_card from "../UI/News_card.js";
-import ImageCard from "../UI/image_card.js"
 
 function News() {
   useEffect(() => {
@@ -295,18 +294,132 @@ function News() {
   };
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
- 
-
-return (
+  return (
     <div>
       <div><Headerbar /></div>
       
+
       <div className="selected_team_logo">
-        <ImageCard image={teamImgSrc} alt={`${selectedTeam}_logo`} />
+        <img src={teamImgSrc} alt={`${selectedTeam}_logo`}></img>
       </div>
 
-     <div><News_card /></div>
-        
+      <div className="news_container_big">
+        <div className="news_container">
+          <Link to='/News2' onClick={selectNewsType1} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                <img src={icon1} width="15%" height="15%"></img>
+                <h4>부상</h4>
+              </div>
+              <div className="news_block_info">
+              {/* {injuryData.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline} </p> ))} */} 
+                {<p> {injuryData ? JSON.stringify(injuryData) : 'Loading...'} </p>}
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType2} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+              <img src={icon2} width="15%" height="15%"></img>
+              <h4>구단 관련</h4>
+                
+              </div>
+              <div className="news_block_info">
+                  {club_internal.map((item, index) => ( <p key={index}><h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType3} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+              <img src={icon3} width="15%" height="15%"></img>
+              <h4>선수</h4> 
+              </div>
+              <div className="news_block_info">
+                  {player_idv.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3>{item.headline} </p> ))}
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType4} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+              <img src={icon4} width="15%" height="15%"></img>
+                <h4>경기 결과</h4>
+              </div>
+              <div className="news_block_info">
+                 {match_result.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div className="news_container">
+          <Link to='/News2' onClick={selectNewsType5} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+              <img src={icon5} width="15%" height="15%"></img>
+                경기 전 
+              </div>
+              <div className="news_block_info">
+               {match_plan.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType6} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+              <img src={icon6} width="15%" height="15%"></img>
+              <h4>논란</h4>
+              </div>
+              <div className="news_block_info">
+                 {Issue.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
+                  {/* {<p> {Issue ? JSON.stringify(Issue) : 'Loading...'} </p>} */}
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType7} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+              <img src={icon7} width="15%" height="15%"></img>
+              <h4>이적</h4>
+              </div>
+              <div className="news_block_info">
+              {tradeData.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType8} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+                <img src={icon8} width="15%" height="15%"></img>
+                <h4>선발 라인업</h4>
+                          
+              </div>
+              <div className="news_block_info">
+                {Squad.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/News2' onClick={selectNewsType9} className="link_reset">
+            <div className="news_block">
+              <div className="news_block_intro">
+              <img src={icon9} width="15%" height="15%"></img>
+              <h4>인터뷰</h4> 
+      
+              </div>
+              <div className="news_block_info">
+                 {Interview.map((item, index) => ( <p key={index}> <h3 className="inline">{index+1}.</h3> {item.headline} </p> ))}
+              </div>
+            </div>
+          </Link>
+        </div>
 
        
       </div>
@@ -317,12 +430,19 @@ return (
 
 
 
+    </div>
+
      
   );
 
  
 }
 
+/*
+<div className="keyword_container">
+        <h3 className="keyword_container_intro">-keyword-</h3>
+      </div>
+*/
 
 export default News;
 
