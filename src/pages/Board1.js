@@ -35,12 +35,12 @@ function Board1() {
               <div className="flex flex-col justify-center items-center bg-gray-300 w-1/2 h-[900px] ">
                 <div className="justify-center item-center flex bg-white w-4/5 h-[500px]">
                   <div className="w-full overflow-x-auto pt-2">
-                    <table className="w-full table-fixed border border-black">
+                    <table className="w-full border border-black table-fixed">
                       <colgroup>
                         <col style={{ width: "30%" }} />
                         <col style={{ width: "70%" }} />
                       </colgroup>
-                      <thead className="border-b border-black bg-green-450 h-fit">
+                      <thead className="border-b border-black bg-green-700 h-fit">
                         <tr>
                           <th scope="col" className="py-2 text-white border-l border-black border-t border-b">글쓴이</th>
                           <th scope="col" className="py-2 text-white border-r border-black border-t border-b-0">제목</th>
@@ -59,7 +59,7 @@ function Board1() {
                         ))}
                       </tbody>
                     </table>
-                    <div className="w-full border border-black rounded-b-lg mt-2 py-2 text-center">
+                    <div className="w-full bg-green-700 h-fit border border-black rounded-b-2xl mt-2 py-2 text-center text-white">
                       1 2 3
                     </div>
                   </div>
