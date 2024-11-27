@@ -15,7 +15,7 @@ export default function CardExample() {
                 </div>
             </div>
 
-            11111 11111 11111
+
             <div class="card bg-primary text-primary-content">
                 <div class="card-body">
                     <h5 class="card-title text-primary-content mb-2.5">Customer Support</h5>
