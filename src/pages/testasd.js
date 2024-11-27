@@ -14,8 +14,7 @@ export default function CardExample() {
                 <div style={{ flex: 1, textAlign: "left" }}><News_card /></div>
                 
                 <div style={{ display: "flex", justifyContent: "center" }}>
-                <div> <News_card /></div><div> <News_card /></div>
-                <div> <News_card /></div>
+                <div class="artboard artboard-demo artboard-horizontal phone-4">896 × 414</div>
                 </div>
 
                 <div style={{ flex: 1, textAlign: "right" }}><News_card /></div>
@@ -32,7 +31,7 @@ export default function CardExample() {
                 <div>Bottom Content</div>
             </div>
 
-
+        
         </div>
 
 

@@ -22,32 +22,11 @@ import K10 from "../logo_image/emblem_K10.png";
 import K11 from "../logo_image/emblem_K11.png";
 import K12 from "../logo_image/emblem_K12.png";
 
-import icon1 from "../logo_image/icon_injury.png";
-import icon2 from "../logo_image/icon_club.png";
-import icon3 from "../logo_image/icon_player.png";
-import icon4 from "../logo_image/icon_result.png";
-import icon5 from "../logo_image/icon_before.png";
-import icon6 from "../logo_image/icon_issue.png";
-import icon7 from "../logo_image/icon_trade.png";
-import icon8 from "../logo_image/icon_lineup.png";
-import icon9 from "../logo_image/icon_interview.png";
-
-
-//Link the API Part
-import fetch_token from "../apiService/fetch_token.js";
-import fetch_injury from "../apiService/news-injury.js";
-import fetch_trade from "../apiService/news-trade.js";
-import fetch_clubinternal from "../apiService/news-Club_internal.js";
-import fetch_Player_idv from "../apiService/news-player_idv.js";
-import fetch_Match_result from "../apiService/news-match_result.js";
-import fetch_match_plan from "../apiService/news-match_plan.js";
-import fetch_Issue from "../apiService/news-Issue.js";
-import fetch_Squad from "../apiService/news-Squad.js"
-import fetch_Interview from "../apiService/news-Interview.js";
-
 import Headerbar from "../UI/header.js";
 import News_card from "../UI/News_card.js";
-import ImageCard from "../UI/image_card.js"
+import ImageCard from "../UI/image_card.js";
+import Tab from "../UI/tab_pill.js";
+
 
 function News() {
   useEffect(() => {
@@ -81,235 +60,35 @@ function News() {
 
   const teamImgSrc = teamImages[selectedTeam];
 
-  // Set API information
-  const username = "test"; 
-  //const team = selectedTeam; // When ALL api information already done .change team to this one
-  const team = "울산";
-  const [token, setToken] = useState('');  //token
-  const [Local_token, setLocalToken] = useState(localStorage.getItem('token') || '');
-  const [Local_name, setLocalName] = useState(localStorage.getItem('username') || '');
-  const [Local_team, setLocalTeam] = useState(localStorage.getItem('team') || '');
 
-  const [tradeData,settradeData] = useState([]); 
-  const [injuryData,setinjuryData] = useState([]);
-  const [club_internal,setclubinternal] = useState([]);
-  const [player_idv,setPlayer_idv] = useState([]);
-  const [match_result,setmatch_result] = useState([]);
-  const [match_plan,setMatch_plan] = useState([]);
-  const [Issue,setIssue] =useState([]);
-  const [Squad,setSquad] = useState([]);
-  const [Interview,setInterview] =useState([]);
-  
-//Get token
-  useEffect(() => {
-    const getTokenInfo = async () => {
-      if (username !== Local_name || team !== Local_team) {
-        const fetchedToken = await fetch_token(username, team);
-        setToken(fetchedToken);
-        setLocalToken(fetchedToken);
-        setLocalName(username);
-        setLocalTeam(team);
-        
-        localStorage.setItem('token', fetchedToken);
-        localStorage.setItem('username', username);
-        localStorage.setItem('team', team);
-      } else {
-        setToken(Local_token);   //token value
-      }
-    };
-    getTokenInfo(); 
-  }, [username, selectedTeam, Local_name, Local_team, Local_token]);
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------
-//to yang_hang : Categry : Injury : 부상  
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_injury(token);
-        setinjuryData(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType1 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "부상" })
-    );
-
-    localStorage.setItem('news_data',JSON.stringify(injuryData));
-  };
-
-//to yang_hang : Categry : Club_internal : 구단 관련
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_clubinternal(token);
-        setclubinternal(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType2 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "구단 관련" })
-    );
-
-    localStorage.setItem('news_data',JSON.stringify(club_internal));
-  };
-
-  //to yang_hang : Categry : Player_idv : 선수
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_Player_idv(token);
-        setPlayer_idv(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType3 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "선수" })
-
-    );
-    localStorage.setItem('news_data',JSON.stringify(player_idv));
-  };
-
-  //to yang_hang : Categry : Match_result : 경기 결과
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_Match_result(token);
-        setmatch_result(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType4 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "경기 결과" })
-    
-    );
-    localStorage.setItem('news_data',JSON.stringify(match_result));
-  };
-
-  //to yang_hang : Categry : Match_plan : 경기 전
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_match_plan(token);
-        setMatch_plan(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType5 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "경기 전" })
-    
-    );
-    localStorage.setItem('news_data',JSON.stringify(match_plan));
-  };
-
-//to yang_hang : Categry : Issue : 논란
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_Issue(token);
-        setIssue(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType6 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "논란" })
-      
-    );
-    localStorage.setItem('news_data',JSON.stringify(Issue));
-  };
-  
-   //to yang_hang : Categry : Trade : 이적
-   useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedtradeData = await fetch_trade(token);
-        settradeData(fetchedtradeData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType7 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({  
-        selectedNewsType: "이적" ,
-      })
-    );
-    localStorage.setItem('news_data',JSON.stringify(tradeData));
-  };
-
-//to yang_hang : Categry : Squad : 선발 라인업
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_Squad(token);
-        setSquad(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType8 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "선발 라인업" })
-      
-    );
-    localStorage.setItem('news_data',JSON.stringify(Squad));
-  };
+  //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
- //to yang_hang : Categry : Interview : 인터뷰
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) { 
-        const fetchedData = await fetch_Interview(token);
-        setInterview(fetchedData);
-      }
-    };
-    getInfo(); 
-  }, [token]);
-  const selectNewsType9 = () => {
-    localStorage.setItem(
-      "newsTypeSelect",
-      JSON.stringify({ selectedNewsType: "인터뷰" })
-     
-    );
-    localStorage.setItem('news_data',JSON.stringify(Interview));
-  };
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------
- 
-
-return (
+  return (
     <div>
       <div><Headerbar /></div>
-      
-      <div className="selected_team_logo">
-        <ImageCard image={teamImgSrc} alt={`${selectedTeam}_logo`} />
+
+      <div class="container">
+        <div class="item">
+          <ImageCard image={teamImgSrc} alt={`${selectedTeam}_logo`} ></ImageCard>
+        </div>
+        {/* <div class="item"><News_card /></div> */}
       </div>
 
-     <div><News_card /></div>
-        
+      <div><Tab /></div>
 
-       
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '20px' }}>
+
+
       </div>
+      <footer class="footer footer-center bg-base-200/60 px-6 py-4">
+        <aside>
+          <p>Copyright © 2024 - All right reserved.</p>
+        </aside>
+      </footer>
+
+
+    </div>
 
 
 
@@ -317,10 +96,10 @@ return (
 
 
 
-     
+
   );
 
- 
+
 }
 
 

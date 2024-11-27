@@ -4,7 +4,7 @@ import icon from "../logo_image/ICON.png";
 import "../UI/header_style.css";
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
+  { name: '홈', href: '/', current: false },
   { name: '뉴스', href: '/News1', current: false },
   { name: '분석', href: '/Analysis1', current: false },
   { name: '캘린더', href: '/Calendar', current: false },
