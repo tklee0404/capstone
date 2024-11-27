@@ -72,7 +72,9 @@ function Board1() {
                     <button className="w-10/12 h-1/6 bg-gray-300 mt-2 border border-black rounded-md">POST / 올리기</button>
                   </div>
                 </div>
-                <a ></a>
+                <Link to="/Board2" className="text-blue-500 underline">
+                  Go to Board2
+                </Link>
               </div>
             </div>
         </div>
