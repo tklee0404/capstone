@@ -19,6 +19,7 @@ import Board1 from './pages/Board1.js';
 import Board2 from './pages/Board2.js';
 
 
+
 function App() {
   return(
     <main className="main-container">
@@ -35,7 +36,7 @@ function App() {
         <Route path="/Predict1" element={<Predict1 />}></Route>
         <Route path="/Analysis2" element={<Analysis2 />}></Route>
         <Route path="/Predict2" element={<Predict2 />}></Route>
-        <Route path="/test" element={<Card5 />}></Route>
+        <Route path="/test" element={<testasd />}></Route>
         <Route path="/Board1" element={<Board1 />}></Route>
         <Route path="/Board2" element={<Board2 />}></Route>
       </Routes>

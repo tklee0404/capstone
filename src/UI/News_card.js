@@ -1,46 +1,22 @@
 import React from "react";
-import Headerbar from "../UI/header.js";
 
-export default function CardExample() {
+
+const Card = ({ title, describe, url }) => {
     return (
-        
-        <div>
-            <div>
-                <Headerbar />
-            </div>
-           
-            <div class="card removing:translate-x-5 removing:opacity-0 w-full transition duration-300 ease-in-out" id="card-dismiss" >
-              
-                <div class="card-body">
-                    <h5 class="card-title mb-2.5">Important Update</h5>
-                    <p class="mb-4">Stay informed with the latest updates and features that enhance your experience. Click on the icons above to refresh, maximize, or close this card.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Learn more</a>
-                </div>
-            </div>
+        <div className="card w-full transition duration-300 ease-in-out">
+            <div className="card-body">
+                <h5 className="card-title mb-2.5">{title}</h5>
 
-            11111 11111 11111
-            <div class="card bg-primary text-primary-content">
-                <div class="card-body">
-                    <h5 class="card-title text-primary-content mb-2.5">Customer Support</h5>
-                    <p>Enhance customer satisfaction by providing timely and effective support solutions.</p>
-                </div>
-            </div>
-            <div class="card bg-primary/20 border-primary text-primary border shadow-none">
-                <div class="card-body">
-                    <h5 class="card-title text-primary mb-2.5">Customer Support</h5>
-                    <p>Enhance customer satisfaction by providing timely and effective support solutions.</p>
-                </div>
-            </div>
-            <div class="card border-primary text-primary border bg-transparent shadow-none">
-                <div class="card-body">
-                    <h5 class="card-title text-primary mb-2.5">Customer Support</h5>
-                    <p>Enhance customer satisfaction by providing timely and effective support solutions.</p>
-                </div>
-            </div>
+                <p class="mb-4 line-clamp-5">
+                    {describe}
+                </p>
 
-
+                <a href={url} className="text-blue-500 hover:underline">
+                    Get more
+                </a>
+            </div>
         </div>
-
-
     );
-}
+};
+
+export default Card;
