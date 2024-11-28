@@ -32,7 +32,7 @@ function Board1() {
         <div>
             <Headerbar> </Headerbar>
             <div className="justify-center item-center flex h-screen">
-              <div className="flex flex-col justify-center items-center bg-gray-300 w-1/2 h-[900px] ">
+              <div className="flex flex-col justify-center items-center bg-gray-300 w-full h-[900px] ">
                 <div className="justify-center item-center flex bg-white w-4/5 h-[500px]">
                   <div className="w-full overflow-x-auto pt-2">
                     <table className="w-full border border-black table-fixed">
