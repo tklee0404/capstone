@@ -1,39 +1,29 @@
-import React from "react";
-import News_card from "../UI/News_card";
-import Header from "../UI/header";
+import React, { useState } from 'react';
+import ApexCharts from 'react-apexcharts';
 
-export default function CardExample() {
-    return (
-        <div>
-            <div><Header /></div>
+const MyChart = () => {
+  // 初始化图表的配置和数据
+  const [chartOptions, setChartOptions] = useState({
+    chart: {
+      id: 'basic-bar', // 设置图表 ID
+    },
+    xaxis: {
+      categories: ['A', 'B', 'C', 'D'],
+    },
+  });
 
-            <div><News_card /></div>
+  const [chartSeries, setChartSeries] = useState([
+    {
+      name: 'series-1',
+      data: [10, 20, 30, 40],
+    },
+  ]);
 
+  return (
+    <div>
+      <ApexCharts options={chartOptions} series={chartSeries} type="bar" height={350} />
+    </div>
+  );
+};
 
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ flex: 1, textAlign: "left" }}><News_card /></div>
-                
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                <div class="artboard artboard-demo artboard-horizontal phone-4">896 × 414</div>
-                </div>
-
-                <div style={{ flex: 1, textAlign: "right" }}><News_card /></div>
-            </div>
-
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ flex: 1, textAlign: "left" }}>Left Content</div>
-                <div>adwaw</div>
-                <div style={{ flex: 1, textAlign: "right" }}>Right Content</div>
-            </div>
-
-            <div>
-                <div style={{ marginBottom: "10px" }}>Top Content</div>
-                <div>Bottom Content</div>
-            </div>
-
-        
-        </div>
-
-
-    );
-}
+export default MyChart;
