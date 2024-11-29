@@ -76,11 +76,11 @@ function Board2() {
                                 <p className="text-gray-600 ml-4">{post?.nickname || "writer's nickname / 글쓴이"}</p>
                             </div>
                             <div className="flex mt-1">
-                                <div className="card-actions">
-                                    <button className="btn btn-primary bg-green-700">MOD / 수정</button>
+                                <div className="card-actions"> 
+                                    <button className="btn btn-primary bg-green-700">MOD / 수정</button> {/*NEED API / this button -> MOD the article*/}
                                 </div>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary ml-2 bg-green-700">DEL / 삭제</button>
+                                    <button className="btn btn-primary ml-2 bg-green-700">DEL / 삭제</button> {/*NEED API / this button -> DELETE the article*/}
                                 </div>
                             </div>
                         </div>
