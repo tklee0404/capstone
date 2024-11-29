@@ -25,7 +25,8 @@ function Board1() {
       { nickname: "이", title: "탁경", content: "이것은 게시글 내용입니다." },
       { nickname: "avbac", title: "길고 긴 제목", content: "길고 긴 내용이 여기에 적혀 있습니다." },
       { nickname: "이", title: "탁경", content: "다른 게시글의 내용입니다." },
-      { nickname: "두번째", title: "다른 제목", content: "다른 내용입니다." }
+      { nickname: "두번째", title: "다른 제목", content: "다른 내용입니다." },
+      { nickname: "avbac", title: "길고 긴 제목 dddddddddddddddddddddddddddddddddddddddddddddddddddddd", content: "길고 긴 내용이 여기에 적혀 있습니다ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd." }
     ];
 
     const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
