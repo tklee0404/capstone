@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,23 +12,43 @@ import { useLocation } from "react-router-dom";
 import Headerbar from "../UI/header.js";
 import "../compoAssets/board_page_style.css";
 
-
 function Board1() {
-
     const dummyData = [
-      { nickname: "이", title: "탁경" },
-      { nickname: "avbac", title: "aaaaaadddddddddddddddaddddddddddddddddddddddaaaaaaaaaaaaaaa" },
-      { nickname: "이", title: "탁경" },
-      { nickname: "이", title: "탁경" },
-      { nickname: "이", title: "탁경" },
-      { nickname: "이", title: "탁경" },
-      { nickname: "이", title: "탁경" },
-      { nickname: "이", title: "탁경" },
-      { nickname: "이", title: "탁경" },
-      
+      { nickname: "이", title: "탁경", content: "이것은 게시글 내용입니다." },
+      { nickname: "avbac", title: "길고 긴 제목", content: "길고 긴 내용이 여기에 적혀 있습니다." },
+      { nickname: "이", title: "탁경", content: "다른 게시글의 내용입니다." },
+      { nickname: "두번째", title: "다른 제목", content: "다른 내용입니다." },
+      { nickname: "이", title: "탁경", content: "이것은 게시글 내용입니다." },
+      { nickname: "avbac", title: "길고 긴 제목", content: "길고 긴 내용이 여기에 적혀 있습니다." },
+      { nickname: "이", title: "탁경", content: "다른 게시글의 내용입니다." },
+      { nickname: "두번째", title: "다른 제목", content: "다른 내용입니다." },
+      { nickname: "이", title: "탁경", content: "이것은 게시글 내용입니다." },
+      { nickname: "avbac", title: "길고 긴 제목", content: "길고 긴 내용이 여기에 적혀 있습니다." },
+      { nickname: "이", title: "탁경", content: "다른 게시글의 내용입니다." },
+      { nickname: "두번째", title: "다른 제목", content: "다른 내용입니다." }
     ];
 
-    return(
+    const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
+    const postsPerPage = 9; // 한 페이지에 표시되는 게시글 최대 개수
+    const totalPages = Math.ceil(dummyData.length / postsPerPage); // 전체 페이지 수 계산
+
+    const currentData = dummyData.slice(
+      (currentPage - 1) * postsPerPage,
+      currentPage * postsPerPage
+    );
+
+    const navigate = useNavigate();
+
+    // 게시글 클릭 핸들러
+    const handleRowClick = (post) => {
+      navigate("/Board2", { state: post }); // 게시글 데이터를 state로 전달
+    };
+
+    const handlePageChange = (page) => {
+      setCurrentPage(page);
+    };
+
+    return (
         <div>
             <Headerbar> </Headerbar>
             <div className="justify-center item-center flex h-screen">
@@ -47,8 +67,12 @@ function Board1() {
                         </tr>
                       </thead>
                       <tbody>
-                        {dummyData.map((data, index) => (
-                          <tr key={index} className="border-b border-black">
+                        {currentData.map((data, index) => (
+                          <tr
+                            key={index}
+                            className="border-b border-black cursor-pointer"
+                            onClick={() => handleRowClick(data)}
+                          >
                             <td className="border border-black px-2 py-2 whitespace-nowrap overflow-hidden text-ellipsis">
                               {data.nickname}
                             </td>
@@ -60,7 +84,15 @@ function Board1() {
                       </tbody>
                     </table>
                     <div className="w-full bg-green-700 h-fit border border-black rounded-b-2xl mt-2 py-2 text-center text-white">
-                      1 2 3
+                      {[...Array(totalPages)].map((_, index) => (
+                        <button
+                          key={index}
+                          className={`px-2 ${currentPage === index + 1 ? "font-bold underline" : ""}`}
+                          onClick={() => handlePageChange(index + 1)}
+                        >
+                          {index + 1}
+                        </button>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -69,7 +101,7 @@ function Board1() {
                     <input className="px-2 w-10/12 h-1/12 bg-gray-300 mt-2 border border-black rounded-md" placeholder="nickname 닉네임"></input>
                     <input className="px-2 w-10/12 h-1/12 bg-gray-300 mt-2 border border-black rounded-md" placeholder="title 제목"></input>
                     <textarea className="px-2 w-10/12 h-3/5 bg-gray-300 mt-2 border border-black rounded-md"></textarea>
-                    <button className="w-10/12 h-1/6 bg-gray-300 mt-2 border border-black rounded-md">POST / 올리기</button>
+                    <button className="w-10/12 h-1/6 bg-green-700 mt-2 border border-black rounded-md">POST / 올리기</button>
                   </div>
                 </div>
                 <Link to="/Board2" className="text-blue-500 underline">
@@ -81,7 +113,7 @@ function Board1() {
     );
 }
 
-export default Board1
+export default Board1;
 
 /*
 return(
