@@ -1,39 +1,85 @@
-import React from "react";
-import News_card from "../UI/News_card";
-import Header from "../UI/header";
+import React, { useState, useEffect } from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
-export default function CardExample() {
-    return (
-        <div>
-            <div><Header /></div>
+import fetch_calendar from '../apiService/fetch_calendar';
 
-            <div><News_card /></div>
+export default function MatchCalendar() {
+  const [matches, setMatches] = useState([]);
+  const [selectedMatch, setSelectedMatch] = useState(null);
+  
+  const [selectedTeam, setSelectedTeam] = useState();
+
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem("teamSelect"));
+    if (storedData && storedData.selectedTeam) {
+      setSelectedTeam(storedData.selectedTeam);
+    }
+  }, []);
+
+  
+  const [token, setLocalToken] = useState(localStorage.getItem('token') || '');
+  const [calendarData, setcalendarData] = useState([]);
+  useEffect(() => {
+    const getInfo = async () => {
+      if (token) {
+        const fetchedData = await fetch_calendar(token);
+        setcalendarData(fetchedData);
+      }
+    };
+    getInfo();
+  }, [token]);
 
 
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ flex: 1, textAlign: "left" }}><News_card /></div>
-                
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                <div class="artboard artboard-demo artboard-horizontal phone-4">896 × 414</div>
-                </div>
+  // 将比赛数据转换为 FullCalendar 能用的事件格式
+  useEffect(() => {
+    const formattedMatches = Object.keys(calendarData).map(key => {
+      const match = calendarData[key];
+      const matchDate = new Date(match.match_date); // 将比赛日期转换为 Date 对象
 
-                <div style={{ flex: 1, textAlign: "right" }}><News_card /></div>
-            </div>
+      return {
+        title: `${match.opponent_team} vs. ${match.this_score}-${match.opponent_score}`, // 比赛对阵信息
+        date: matchDate.toISOString().split('T')[0], // 只取日期部分
+        extendedProps: {
+          matchDetails: match
+        }
+      };
+    });
 
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ flex: 1, textAlign: "left" }}>Left Content</div>
-                <div>adwaw</div>
-                <div style={{ flex: 1, textAlign: "right" }}>Right Content</div>
-            </div>
+    setMatches(formattedMatches);
+  }, []);
 
-            <div>
-                <div style={{ marginBottom: "10px" }}>Top Content</div>
-                <div>Bottom Content</div>
-            </div>
+  // 处理点击日期事件，显示比赛信息
+  const handleDateClick = (arg) => {
+    const selectedDate = arg.dateStr;
+    const match = matches.find(m => m.date === selectedDate);
+    if (match) {
+      setSelectedMatch(match.extendedProps.matchDetails);
+    }
+  };
 
+  return (
+   <div class="w-full overflow-x-auto">
+  <table class="table-striped-columns table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-nowrap">John Doe</td>
+        <td>johndoe@example.com</td>
+        <td><span class="badge badge-soft badge-success text-xs">Professional</span></td>
         
-        </div>
-
-
-    );
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+  );
 }

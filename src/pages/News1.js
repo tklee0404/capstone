@@ -25,7 +25,7 @@ import K12 from "../logo_image/emblem_K12.png";
 import Headerbar from "../UI/header.js";
 import News_card from "../UI/News_card.js";
 import ImageCard from "../UI/image_card.js";
-import Tab from "../UI/tab_pill.js";
+import Tab from "../UI/news_pill.js";
 
 
 function News() {
@@ -89,12 +89,6 @@ function News() {
 
 
     </div>
-
-
-
-
-
-
 
 
   );

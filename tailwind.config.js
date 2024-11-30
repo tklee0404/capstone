@@ -1,8 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+module.exports =  {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/flyonui/dist/js/*.js"
+    "./node_modules/flyonui/dist/js/*.js",
+    "./src/apexcharts-helper.js",
+    './node_modules/apexcharts/**/*.js',
   ],
   theme: {
     extend: {
@@ -14,5 +17,9 @@ module.exports = {
   plugins: [
     require("flyonui"),
     require("flyonui/plugin") // Require only if you want to use FlyonUI JS component
-  ]
+  ],
+  flyonui: {
+    vendors: true,  
+  },
+
 }

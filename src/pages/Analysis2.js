@@ -1,54 +1,129 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  useNavigate,
-  BrowserRouter,
-  Routes,
-  NavLink,
-} from "react-router-dom";
-import Headerbar from "../UI/header.js";
-import Analysis_Graph from "../compoAssets/analysis_result_graph.js";
-import Analysis_Table from "../compoAssets/analysis_result_table.js";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import K01 from "../logo_image/emblem_K01.png";
-import K02 from "../logo_image/emblem_K02.png";
-import K03 from "../logo_image/emblem_K03.png";
-import K04 from "../logo_image/emblem_K04.png";
-import K05 from "../logo_image/emblem_K05.png";
-import K06 from "../logo_image/emblem_K06.png";
-import K07 from "../logo_image/emblem_K07.png";
-import K08 from "../logo_image/emblem_K08.png";
-import K09 from "../logo_image/emblem_K09.png";
-import K10 from "../logo_image/emblem_K10.png";
-import K11 from "../logo_image/emblem_K11.png";
-import K12 from "../logo_image/emblem_K12.png";
+import React, { useState, useEffect } from 'react';
 import "../App.css";
-import "../compoAssets/analysis_result_page_style.css";
+
+import Headerbar from "../UI/header.js";
+import Shots from "../UI/shotsUI.js";
+import Pass from "../UI/passUI.js";
+import SingleAreaChart from "../UI/chart_line.js";
+import "../compoAssets/news_background_style.css";
+import Table_informUI from "../UI/table_informUI.js";
+import Tackles from "../UI/tacklesUI.js";
+import Assists from "../UI/assistsUI.js";
 
 function Analysis2() {
+  const [activeTab, setActiveTab] = useState(1);  // 默认激活第一个 tab
+
+  // 处理 tab 切换
+  const handleTabClick = (tabIndex) => {
+    setActiveTab(tabIndex);
+  };
 
   return (
     <div>
-      <Headerbar />
+      <div>
+        <Headerbar />
+      </div>
 
-      <div className="analysis_result_container">
-        <div>
-          <div className="analysis_result_table">
-            <Analysis_Table></Analysis_Table>
-          </div>
+      
+
+       <div class="divider divider-dotted"><p class="bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-4xl w-fit" > 
+      The Team STATE
+       </p></div>     
+       
+    <div>
+      <nav className="tabs tabs-bordered" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
+        <button
+          type="button"
+          className={`tab ${activeTab === 1 ? 'tab-active' : ''}`}
+          onClick={() => handleTabClick(1)}
+          aria-controls="tabs-basic-1"
+          role="tab"
+          aria-selected={activeTab === 1}
+        >
+          Shots
+        </button>
+        <button
+          type="button"
+          className={`tab ${activeTab === 2 ? 'tab-active' : ''}`}
+          onClick={() => handleTabClick(2)}
+          aria-controls="tabs-basic-2"
+          role="tab"
+          aria-selected={activeTab === 2}
+        >
+          Pass
+        </button>
+        <button
+          type="button"
+          className={`tab ${activeTab === 3 ? 'tab-active' : ''}`}
+          onClick={() => handleTabClick(3)}
+          aria-controls="tabs-basic-3"
+          role="tab"
+          aria-selected={activeTab === 3}
+        >
+          tackles
+        </button>
+        <button
+          type="button"
+          className={`tab ${activeTab === 4 ? 'tab-active' : ''}`}
+          onClick={() => handleTabClick(4)}
+          aria-controls="tabs-basic-4"
+          role="tab"
+          aria-selected={activeTab === 4}
+        >
+          Assists
+        </button>
+      </nav>
+
+      <div className="mt-3">
+        <div
+          id="tabs-basic-1"
+          role="tabpanel"
+          aria-labelledby="tabs-basic-item-1"
+          className={activeTab === 1 ? '' : 'hidden'}
+        >
+          <Shots />
         </div>
-
-
-        <div className="analysis_result_graph_container">
-          <div className="analysis_result_graph">
-            <Analysis_Graph></Analysis_Graph>
-          </div>
+        <div
+          id="tabs-basic-2"
+          role="tabpanel"
+          aria-labelledby="tabs-basic-item-2"
+          className={activeTab === 2 ? '' : 'hidden'}
+        >
+         <Pass />
+        </div>
+        <div
+          id="tabs-basic-3"
+          role="tabpanel"
+          aria-labelledby="tabs-basic-item-3"
+          className={activeTab === 3 ? '' : 'hidden'}
+        >
+          <Tackles />
+        
+        </div>
+        <div
+          id="tabs-basic-4"
+          role="tabpanel"
+          aria-labelledby="tabs-basic-item-4"
+          className={activeTab === 4 ? '' : 'hidden'}
+        >
+          <Assists />
+        
         </div>
       </div>
+    </div>
+
+    
+    <div class="divider"><span class="flex items-center justify-center"><span class="icon-[tabler--crown] size-5"></span></span></div>
+    <p style={{ textAlign: 'center' }}>
+    Detailed data information
+    </p>
+      <div style={{ padding: 40 }}><Table_informUI /></div>
+
+      <footer class="footer footer-center bg-base-200/60 px-6 py-4">
+        <aside>
+          <p>Copyright © 2024 - All right reserved.</p>
+        </aside>
+      </footer>
     </div>
   );
 }

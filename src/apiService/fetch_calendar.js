@@ -1,9 +1,10 @@
 
 
-async function fetch_analysis(token) {
+async function fetch_calendar(token) {
 
-    const url = `http://220.88.39.23:5000/api/stats`;
-
+    const url = 'http://220.88.39.23:5000/api/calendar/past_events';
+    
+    
     try {
         const response = await fetch(url, {
             method: 'GET',
@@ -21,7 +22,6 @@ async function fetch_analysis(token) {
 
         const data = await response.json();
         return data;
-        //return data.map(entry => entry.author); 
 
     } catch (error) {
         console.error("Error fetching calendar data:", error);
@@ -29,4 +29,4 @@ async function fetch_analysis(token) {
     }
 }
 
-export default fetch_analysis;
+export default fetch_calendar;
