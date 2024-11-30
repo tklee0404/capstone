@@ -91,12 +91,6 @@ function News() {
     </div>
 
 
-
-
-
-
-
-
   );
 
 

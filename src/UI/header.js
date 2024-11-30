@@ -6,7 +6,7 @@ import "../UI/header_style.css";
 const navigation = [
   { name: '홈', href: '/', current: false },
   { name: '뉴스', href: '/News1', current: false },
-  { name: '분석', href: '/Analysis1', current: false },
+  { name: '분석', href: '/Analysis2', current: false },
   { name: '캘린더', href: '/Calendar', current: false },
   { name: '예측', href: '/Predict1', current: false },
   { name: '게시반', href: '/Board1', current: false },

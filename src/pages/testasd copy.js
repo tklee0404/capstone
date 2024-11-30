@@ -1,155 +1,102 @@
 import React, { useState, useEffect } from 'react';
-import ApexCharts from 'react-apexcharts';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
-const SingleAreaChart = () => {
-  const [chartOptions, setChartOptions] = useState({
-    chart: {
-        type: "bar",
-        height: 400,
-        toolbar: {
-          show: false
-        },
-        zoom: {
-          enabled: false
-        }
-      },
-      series: [
-        {
-          name: "Investment",
-          data: [25000, 39000, 65000, 45000, 79000, 80000, 69000, 63000, 60000, 66000, 90000, 78000]
-        }
-      ],
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: "30px"
-        }
-      },
-      legend: {
-        show: false
-      },
-      dataLabels: {
-        enabled: false
-      },
-      colors: ["oklch(var(--p))", "oklch(var(--b1))"],
-      xaxis: {
-        categories: [
-          "Cook",
-          "Erin",
-          "Jack",
-          "Will",
-          "Gayle",
-          "Megan",
-          "John",
-          "Luke",
-          "Ellis",
-          "Mason",
-          "Elvis",
-          "Liam"
-        ],
-        axisBorder: {
-          show: false
-        },
-        axisTicks: {
-          show: false
-        },
-        labels: {
-          style: {
-            colors: "oklch(var(--bc) / 0.9)",
-            fontSize: "12px",
-            fontWeight: 400
-          }
-        }
-      },
-      yaxis: {
-        labels: {
-          align: "left",
-          minWidth: 0,
-          maxWidth: 140,
-          style: {
-            colors: "oklch(var(--bc) / 0.9)",
-            fontSize: "12px",
-            fontWeight: 400
-          },
-          formatter: value => (value >= 1000 ? `${value / 1000}k` : value)
-        }
-      },
-      states: {
-        hover: {
-          filter: {
-            type: "darken",
-            value: 0.9
-          }
-        }
-      },
-      tooltip: {
-        y: {
-          formatter: value => `$${value >= 1000 ? `${value / 1000}k` : value}`
-        },
-        custom: function (props) {
-          const { categories } = props.ctx.opts.xaxis
-          const { dataPointIndex } = props
-          const title = categories[dataPointIndex]
-          const newTitle = `${title}`
+import fetch_calendar from '../apiService/fetch_calendar';
 
-          return buildTooltip(props, {
-            title: newTitle,
-            mode,
-            hasTextLabel: true,
-            wrapperExtClasses: "min-w-28",
-            labelDivider: ":",
-            labelExtClasses: "ms-2"
-          })
-        }
-      },
-      responsive: [
-        {
-          breakpoint: 568,
-          options: {
-            chart: {
-              height: 300
-            },
-            plotOptions: {
-              bar: {
-                columnWidth: "10px"
-              }
-            },
-            stroke: {
-              width: 8
-            },
-            labels: {
-              style: {
-                colors: 'oklch(var(--bc) / 0.9)',
-                fontSize: "10px"
-              },
-              formatter: title => title.slice(0, 3)
-            },
-            yaxis: {
-              labels: {
-                align: "left",
-                minWidth: 0,
-                maxWidth: 140,
-                style: {
-                  colors: 'oklch(var(--bc) / 0.9)',
-                  fontSize: "10px"
-                },
-                formatter: value => (value >= 1000 ? `${value / 1000}k` : value)
-            },
-          },
-        },
-      },
-    ],
-  });
+export default function MatchCalendar() {
+  const [matches, setMatches] = useState([]);
+  const [selectedMatch, setSelectedMatch] = useState(null);
+  
+  const [selectedTeam, setSelectedTeam] = useState();
 
   useEffect(() => {
-    // You can place additional initialization logic here if needed
+    const storedData = JSON.parse(localStorage.getItem("teamSelect"));
+    if (storedData && storedData.selectedTeam) {
+      setSelectedTeam(storedData.selectedTeam);
+    }
   }, []);
 
+  
+  const [token, setLocalToken] = useState(localStorage.getItem('token') || '');
+  const [calendarData, setcalendarData] = useState([]);
+  useEffect(() => {
+    const getInfo = async () => {
+      if (token) {
+        const fetchedData = await fetch_calendar(token);
+        setcalendarData(fetchedData);
+      }
+    };
+    getInfo();
+  }, [token]);
+
+  // 你的比赛数据（从API或者其他地方获取）
+  const matchData = {
+    "0": {
+      "location": "DGB대구은행파크",
+      "match_date": "2024-03-03 14:00",
+      "opponent_score": 0,
+      "opponent_team": "대구",
+      "this_score": 1
+    },
+    "1": {
+      "location": "김천 종합 운동장",
+      "match_date": "2024-03-09 16:30",
+      "opponent_score": 3,
+      "opponent_team": "울산",
+      "this_score": 2
+    }
+  };
+
+  // 将比赛数据转换为 FullCalendar 能用的事件格式
+  useEffect(() => {
+    const formattedMatches = Object.keys(matchData).map(key => {
+      const match = matchData[key];
+      const matchDate = new Date(match.match_date); // 将比赛日期转换为 Date 对象
+
+      return {
+        title: `${match.opponent_team} vs. ${match.this_score}-${match.opponent_score}`, // 比赛对阵信息
+        date: matchDate.toISOString().split('T')[0], // 只取日期部分
+        extendedProps: {
+          matchDetails: match
+        }
+      };
+    });
+
+    setMatches(formattedMatches);
+  }, []);
+
+  // 处理点击日期事件，显示比赛信息
+  const handleDateClick = (arg) => {
+    const selectedDate = arg.dateStr;
+    const match = matches.find(m => m.date === selectedDate);
+    if (match) {
+      setSelectedMatch(match.extendedProps.matchDetails);
+    }
+  };
+
   return (
-    <div id="apex-column-bar-chart" class="w-full">
-      <ApexCharts options={chartOptions} series={chartOptions.series} type="area" height={400} />
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {/* FullCalendar 组件 */}
+      <FullCalendar
+        plugins={[dayGridPlugin, interactionPlugin]}
+        initialView="dayGridMonth"
+        events={matches}
+        dateClick={handleDateClick}
+      />
+
+      {/* 如果点击了比赛日期，显示比赛详情 */}
+      {selectedMatch && (
+        <div style={{ marginTop: '20px', padding: '10px', border: '1px solid #ccc', borderRadius: '5px', width: '400px' }}>
+          <h4>Match Details</h4>
+          <p><strong>Location:</strong> {selectedMatch.location}</p>
+          <p><strong>Opponent:</strong> {selectedMatch.opponent_team}</p>
+          <p><strong>Your Score:</strong> {selectedMatch.this_score}</p>
+          <p><strong>Opponent Score:</strong> {selectedMatch.opponent_score}</p>
+          <p><strong>Match Date:</strong> {selectedMatch.match_date}</p>
+        </div>
+      )}
     </div>
   );
-};
-
-export default SingleAreaChart;
+}

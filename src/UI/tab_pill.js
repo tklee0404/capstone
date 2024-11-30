@@ -177,6 +177,7 @@ export default function CardExample() {
 
     return (
         <div>
+
              <div className="tabs-container flex overflow-x-auto sm:overflow-visible">
              <nav
                 className="tabs tabs-bordered"
