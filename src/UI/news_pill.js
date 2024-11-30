@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import News_card from "../UI/News_card.js";
-import News_card_total from "../UI/news_card_total.js";
+import News_card from "./News_card.js";
+import News_card_total from "./news_card_total.js";
 
 
 //Link the API Part
@@ -279,7 +279,7 @@ export default function CardExample() {
                 {activeTab === "club_internal" && (
                     <div id="tabs-basic-filled-1" role="tabpanel" aria-labelledby="tabs-basic-filled-item-1">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {club_internal.map((item, index) => (
+                            {club_internal&&club_internal.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
@@ -293,7 +293,7 @@ export default function CardExample() {
                 {activeTab === "player_idv" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {player_idv.map((item, index) => (
+                            {player_idv&&player_idv.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
@@ -307,7 +307,7 @@ export default function CardExample() {
                 {activeTab === "Match_result" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Match_result.map((item, index) => (
+                            {Match_result&&Match_result.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
@@ -321,7 +321,7 @@ export default function CardExample() {
                 {activeTab === "match_plan" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {match_plan.map((item, index) => (
+                            {match_plan&&match_plan.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
@@ -335,7 +335,7 @@ export default function CardExample() {
                 {activeTab === "Issue" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Issue.map((item, index) => (
+                            {Issue&&Issue.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
@@ -349,7 +349,7 @@ export default function CardExample() {
                 {activeTab === "tradeData" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {tradeData.map((item, index) => (
+                            {tradeData&&tradeData.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
@@ -363,7 +363,7 @@ export default function CardExample() {
                 {activeTab === "Squad" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Squad.map((item, index) => (
+                            {Squad&&Squad.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
@@ -377,7 +377,7 @@ export default function CardExample() {
                 {activeTab === "Interview" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Interview.map((item, index) => (
+                            {Interview&&Interview.map((item, index) => (
                                 <News_card
                                     key={index}
                                     title={item.headline}
