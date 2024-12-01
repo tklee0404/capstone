@@ -82,56 +82,51 @@ function Predict1() {
   return (
     <div>
       <Headerbar />
-      
-      <div className="justify-center flex w-full h-screen ">
-        <div className="w-full flex flex-col">
-          <div className="justify-center items-center flex mt-5 w-full h-1/6 ">
-            <div className="text-3xl">예측하고 싶은 팀을 선택하세요</div>
-          </div>
-
-          <div className="justify-center items-center flex mt-5 w-full h-1/6 ">
-            <div className="predict_input_container">
-              <div className="predict_input_row">
-                <select
-                  className="predict_dropdown"
-                  value={selectedOpponentTeam}
-                  onChange={handleTeamChange}
-                >
-                  <option value="">팀을 선택하세요</option>
-                  {otherTeams.map((team, index) => (
-                    <option key={index} value={team}>
-                      {team}
-                    </option>
-                  ))}
-                </select>
-                <button className="predict_button" onClick={handleButtonClick}>
-                  입력하기
-                </button>
-              </div>
-              {errorMessage && <p className="error_message">{errorMessage}</p>} {/* 에러 메시지 */}
-            </div>
-          </div>
-          <h1>-가장 최근 경기 예측 결과-</h1>
-          <div className="justify-center items-center flex mt-5 w-full h-1/3 ">
-            <div className="items-center flex flex-col w-11/12 h-5/6 border border-y-green-600 border-4">
-              <div className="justify-around items-center flex w-full h-1/2 ">
-                <img className="predict_image" src={K01} alt="Team 1" />
-                <img className="predict_image" src={K02} alt="Team 2" />
-              </div>
-              <div className="justify-evenly items-center flex w-full border border-t-green-600 h-1/2 ">
-                  <div className="text-4xl">1</div>
-                  <div className="text-4xl">:</div>
-                  <div className="text-4xl">2</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+      <div className="predict_intro_container">
+        <h2 className="predict_intro">-예측하고 싶은 팀을 선택하세요-</h2>
       </div>
 
+      <div className="predict_input_container">
+        <div className="predict_input_row">
+          <select
+            className="predict_dropdown"
+            value={selectedOpponentTeam}
+            onChange={handleTeamChange}
+          >
+            <option value="">팀을 선택하세요</option>
+            {otherTeams.map((team, index) => (
+              <option key={index} value={team}>
+                {team}
+              </option>
+            ))}
+          </select>
+          <button className="predict_button" onClick={handleButtonClick}>
+            입력하기
+          </button>
+        </div>
+        {errorMessage && <p className="error_message">{errorMessage}</p>} {/* 에러 메시지 */}
+      </div>
+
+      <h1>-가장 최근 경기 예측 결과-</h1>
+
+      <div className="nearest_game_container">
+        <div className="nearest_game_result_team">
+          <img src={K01} alt="Team 1" />
+          <img src={K02} alt="Team 2" />
+        </div>
+
+        <div className="nearest_game_result_score">
+          <div className="team1_container">
+            <div className="team1_score">1</div>
+          </div>
+            :
+          <div className="team2_container">
+            <div className="team2_score">2</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="predict_button_container"></div>
     </div>
   );
 }
-
-export default Predict1;
