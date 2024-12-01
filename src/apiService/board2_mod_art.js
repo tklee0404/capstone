@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 
-function MODarticle({ id , comment_id}) {
+function MODarticle({ id }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
-
-  // 打开编辑浮窗
   const handleOpenModal = () => setIsModalOpen(true);
-
-  // 关闭编辑浮窗
   const handleCloseModal = () => setIsModalOpen(false);
 
-  // 提交编辑请求
   const handleEdit = async () => {
     const payload = {
       title: title,
       contents: contents,
     };
-
+//API FETCH PATCH
     try {
-      const response = await fetch(`http://220.88.39.23:5000/api/board/${id}/comment/${comment_id}`, {
+      const response = await fetch(`http://220.88.39.23:5000/api/board/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +24,7 @@ function MODarticle({ id , comment_id}) {
 
       if (response.ok) {
         alert("Post updated successfully!");
-        setIsModalOpen(false); // 关闭浮窗
+        setIsModalOpen(false); 
       } else {
         alert("Failed to update post. Please check your input.");
       }
@@ -42,13 +37,12 @@ function MODarticle({ id , comment_id}) {
   // 删除帖子请求
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://220.88.39.23:5000/api/board/${id}/comment/${comment_id}`, {
+      const response = await fetch(`http://220.88.39.23:5000/api/board/${id}`, {
         method: "DELETE",
       });
 
       if (response.ok) {
         alert("Post deleted successfully!");
-        // 可以在删除后执行其他操作，如跳转到列表页或更新父组件状态
       } else {
         alert("Failed to delete post. Please try again.");
       }
@@ -75,9 +69,9 @@ function MODarticle({ id , comment_id}) {
         </button>
       </div>
 
-      {/* 浮窗 */}
+      {/* AIR WINDOW */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white w-4/5 max-w-lg p-4 rounded-lg shadow-lg">
             <h2 className="text-xl font-bold mb-4">Edit Post</h2>
             <input
@@ -92,7 +86,6 @@ function MODarticle({ id , comment_id}) {
               value={contents}
               onChange={(e) => setContents(e.target.value)}
             />
-            
             <div className="flex justify-end">
               <button
                 className="btn btn-secondary bg-gray-500 mr-2"
