@@ -125,7 +125,7 @@
 
 h1 {
   font-family: "Giants-Regular";
-  margin-top: 30px;
+  font-size: 25px;
   display: flex;
   flex-direction: column;
   text-align: center;

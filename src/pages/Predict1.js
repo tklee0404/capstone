@@ -112,8 +112,9 @@ function Predict1() {
             </div>
           </div>
           <h1>-가장 최근 경기 예측 결과-</h1>
+
           <div className="justify-center items-center flex mt-5 w-full h-1/3 ">
-            <div className="items-center flex flex-col w-11/12 h-5/6 border border-y-green-600 border-4">
+            <div className="items-center flex flex-col w-11/12 h-5/6 border border-y-green-600 border-4 bg-gray-500">
               <div className="justify-around items-center flex w-full h-1/2 ">
                 <img className="predict_image" src={K01} alt="Team 1" />
                 <img className="predict_image" src={K02} alt="Team 2" />
