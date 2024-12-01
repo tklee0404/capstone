@@ -73,7 +73,7 @@ function Predict2() {
       };
 
 
-    return(
+      return(
         <div>
           <Headerbar />
             <div className="predict_page_container_outer">
