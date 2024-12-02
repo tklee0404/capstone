@@ -27,7 +27,44 @@ import K10 from "../logo_image/emblem_K10.png";
 import K11 from "../logo_image/emblem_K11.png";
 import K12 from "../logo_image/emblem_K12.png";
 
+import fetch_analysis from "../apiService/fetch_analysis.js";
+
 function Predict1() {
+  const token = localStorage.getItem("token");
+  const [analysisData, setAnalysisData] = useState([]);
+
+  useEffect(() => {
+    const getInfo = async () => {
+      if (token) {
+        const fetchedData = await fetch_analysis(token);
+        setAnalysisData(fetchedData);
+      }
+    };
+    getInfo();
+  }, [token]);
+
+  const [selectedTeam, setSelectedTeam] = useState();
+
+  useEffect(() => {
+      const storedData = JSON.parse(localStorage.getItem("teamSelect"));
+      if (storedData && storedData.selectedTeam) {
+          setSelectedTeam(storedData.selectedTeam);
+      }
+  }, []);
+  const teamImages = {
+    울산: K01,
+    포항: K02,
+    제주: K03,
+    전북: K04,
+    서울: K05,
+    대전: K06,
+    대구: K07,
+    인천: K08,
+    강원: K09,
+    광주: K10,
+    수원FC: K11,
+    김천: K12
+  };
   useEffect(() => {
     const titleElement = document.getElementsByTagName("title")[0];
     titleElement.innerHTML = `SportsHolic 예측`;
@@ -51,6 +88,11 @@ function Predict1() {
     "수원FC",
     "김천",
   ];
+  const teamImgSrc = teamImages[selectedTeam];
+  const OpponentteamImgSrc = analysisData[0]?.opponent 
+  ? teamImages[analysisData[0].opponent] 
+  : "defaultImagePath.png"; 
+
 
   const [otherTeams, setOtherTeams] = useState([]);
 
@@ -116,13 +158,13 @@ function Predict1() {
           <div className="justify-center items-center flex mt-5 w-full h-1/3 ">
             <div className="items-center flex flex-col w-11/12 h-5/6 border border-y-green-600 border-4 bg-gray-500">
               <div className="justify-around items-center flex w-full h-1/2 ">
-                <img className="predict_image" src={K01} alt="Team 1" />
-                <img className="predict_image" src={K02} alt="Team 2" />
+                <img className="predict_image" src={teamImgSrc} alt="Team 1" />
+                <img className="predict_image" src={OpponentteamImgSrc} alt="Team 2" />
               </div>
               <div className="justify-evenly items-center flex w-full border border-t-green-600 h-1/2 ">
-                  <div className="text-4xl">1</div>
+                  <div className="text-4xl"> {analysisData[0] && analysisData[0].goals ? analysisData[0].goals : "Loading..."}</div>
                   <div className="text-4xl">:</div>
-                  <div className="text-4xl">2</div>
+                  <div className="text-4xl">{analysisData[0]?.goals_conceded ?? "Loading..."}</div>
               </div>
             </div>
           </div>

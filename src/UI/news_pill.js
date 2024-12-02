@@ -32,7 +32,7 @@ export default function CardExample() {
     // Set API information
     const username = "test";
     //const team = selectedTeam; // When ALL api information already done .change team to this one
-    const team = "울산";
+    //const team = "울산";
     const [token, setToken] = useState('');  //token
     const [Local_token, setLocalToken] = useState(localStorage.getItem('token') || '');
     const [Local_name, setLocalName] = useState(localStorage.getItem('username') || '');
@@ -51,22 +51,22 @@ export default function CardExample() {
     //Get token
     useEffect(() => {
         const getTokenInfo = async () => {
-            if (username !== Local_name || team !== Local_team) {
-                const fetchedToken = await fetch_token(username, team);
+            if (username !== Local_name || selectedTeam !== Local_team) {
+                const fetchedToken = await fetch_token(username, selectedTeam);
                 setToken(fetchedToken);
                 setLocalToken(fetchedToken);
                 setLocalName(username);
-                setLocalTeam(team);
+                setLocalTeam(selectedTeam);
 
                 localStorage.setItem('token', fetchedToken);
                 localStorage.setItem('username', username);
-                localStorage.setItem('team', team);
+                localStorage.setItem('team', selectedTeam);
             } else {
                 setToken(Local_token);   //token value
             }
         };
         getTokenInfo();
-    }, [username, team, Local_name, Local_team, Local_token]);
+    }, [username, selectedTeam, Local_name, Local_team, Local_token]);
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------
     //to yang_hang : Categry : Injury : 부상  
@@ -178,13 +178,13 @@ export default function CardExample() {
     return (
         <div>
 
-             <div className="tabs-container flex overflow-x-auto sm:overflow-visible">
-             <nav
-                className="tabs tabs-bordered"
-                aria-label="Tabs"
-                role="tablist"
-                aria-orientation="horizontal"
-            >
+            <div className="tabs-container flex overflow-x-auto sm:overflow-visible">
+                <nav
+                    className="tabs tabs-bordered"
+                    aria-label="Tabs"
+                    role="tablist"
+                    aria-orientation="horizontal"
+                >
                     <button
                         type="button"
                         className={`tab w-full ${activeTab === "club_internal" ? "tab-active" : ""}`}
@@ -267,124 +267,162 @@ export default function CardExample() {
                     </button>
 
 
-            </nav>
-             </div>
-            
+                </nav>
+            </div>
 
 
 
 
-            {/* 标签页内容 */}
+
             <div className="mt-3">
                 {activeTab === "club_internal" && (
                     <div id="tabs-basic-filled-1" role="tabpanel" aria-labelledby="tabs-basic-filled-item-1">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {club_internal&&club_internal.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {club_internal.length > 0 ? (
+                                club_internal.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
+
                         </div>
                     </div>
                 )}
                 {activeTab === "player_idv" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {player_idv&&player_idv.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {player_idv && player_idv.length > 0 ? (
+                                player_idv.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
+
                         </div>
                     </div>
                 )}
                 {activeTab === "Match_result" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Match_result&&Match_result.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {Match_result && Match_result.length > 0 ? (
+                                Match_result.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
+
                         </div>
                     </div>
                 )}
                 {activeTab === "match_plan" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {match_plan&&match_plan.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {match_plan && match_plan.length > 0 ? (
+                                match_plan.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
+
                         </div>
                     </div>
                 )}
                 {activeTab === "Issue" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Issue&&Issue.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {Issue && Issue.length > 0 ? (
+                                Issue.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
+
                         </div>
                     </div>
                 )}
                 {activeTab === "tradeData" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {tradeData&&tradeData.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {tradeData && tradeData.length > 0 ? (
+                                tradeData.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
+
                         </div>
                     </div>
                 )}
                 {activeTab === "Squad" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Squad&&Squad.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {Squad && Squad.length > 0 ? (
+                                Squad.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
+
                         </div>
                     </div>
                 )}
                 {activeTab === "Interview" && (
                     <div id="tabs-basic-filled-2" role="tabpanel" aria-labelledby="tabs-basic-filled-item-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                            {Interview&&Interview.map((item, index) => (
-                                <News_card
-                                    key={index}
-                                    title={item.headline}
-                                    describe={item.contents}
-                                    url={item.url}
-                                />
-                            ))}
+                            {Interview && Interview.length > 0 ? (
+                                Interview.map((item, index) => (
+                                    <News_card
+                                        key={index}
+                                        title={item.headline}
+                                        describe={item.contents}
+                                        url={item.url}
+                                    />
+                                ))
+                            ) : (
+                                <p>Loading...</p>
+                            )}
                         </div>
                     </div>
                 )}
