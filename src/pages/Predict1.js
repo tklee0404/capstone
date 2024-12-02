@@ -162,7 +162,7 @@ function Predict1() {
                 <img className="predict_image" src={OpponentteamImgSrc} alt="Team 2" />
               </div>
               <div className="justify-evenly items-center flex w-full border border-t-green-600 h-1/2 ">
-                  <div className="text-4xl"> {analysisData[0] && analysisData[0].goals ? analysisData[0].goals : "Loading..."}</div>
+                  <div className="text-4xl"> {analysisData[0]?.goals ?? "Loading..."}</div>
                   <div className="text-4xl">:</div>
                   <div className="text-4xl">{analysisData[0]?.goals_conceded ?? "Loading..."}</div>
               </div>
