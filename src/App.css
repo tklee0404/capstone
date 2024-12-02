@@ -5,7 +5,7 @@
 }
 
 .main_logo {
-  width: 150px; 
+  width: 130px; 
   height: 150px;
   object-fit: contain; 
   cursor: pointer;
@@ -34,8 +34,8 @@
   display: block;
 }
 .main_wrap {
-  display: flex; /* 强制使用弹性布局 */
-  margin-top: 10%;
+  display: flex; 
+  margin-top: 8%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
