@@ -70,7 +70,7 @@ function News() {
 
       <div class="container">
         <div class="item">
-          <ImageCard image={teamImgSrc} alt={`${selectedTeam}_logo`} ></ImageCard>
+          <ImageCard image={teamImgSrc} alt={`${selectedTeam}_logo`} team={selectedTeam} ></ImageCard>
         </div>
         {/* <div class="item"><News_card /></div> */}
       </div>
