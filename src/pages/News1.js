@@ -72,7 +72,7 @@ function News() {
         <div class="item">
           <ImageCard image={teamImgSrc} alt={`${selectedTeam}_logo`} team={selectedTeam} ></ImageCard>
         </div>
-        {/* <div class="item"><News_card /></div> */}
+    
       </div>
 
       <div><Tab /></div>
