@@ -9,7 +9,7 @@ export default function CardExample({ image,art,team }) {
         <figure><img src={image} alt={art} className=" object-cover" /></figure>
         <div class="card-body">
           <h5 class="card-title mb-2.5"> {team}</h5>
-          <p class="mb-3">Describe Describe Describe Describe</p>
+          <p class="mb-3"></p>
           <div class="card-actions">
             <button class="btn btn-primary">Get more</button>
             <button class="btn btn-secondary btn-soft">Add to cart</button>

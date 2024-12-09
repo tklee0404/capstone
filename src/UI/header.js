@@ -10,7 +10,7 @@ const navigation = [
   { name: '캘린더', href: '/Calendar', current: false },
   { name: '예측', href: '/Predict1', current: false },
   { name: '게시반', href: '/Board1', current: false },
-  { name: 'test', href: '/test', current: false }
+  // { name: 'test', href: '/test', current: false }
 ]
 
 function classNames(...classes) {
