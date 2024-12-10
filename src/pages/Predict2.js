@@ -1,15 +1,4 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  useNavigate,
-  BrowserRouter,
-  Routes,
-  NavLink,
-} from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import Headerbar from "../UI/header.js";
 import { useState, useEffect, useRef } from "react";
 import "../App.css";
@@ -33,17 +22,6 @@ import Fetch_predict from "../apiService/fetch_predict.js";
 function Predict2() {
   const token = localStorage.getItem("token");
   const [PredictData, setPredictData] = useState([]);
-
-  useEffect(() => {
-    const getInfo = async () => {
-      if (token) {
-        const fetchedData = await Fetch_predict(token);
-        setPredictData(fetchedData);
-      }
-    };
-    getInfo();
-  }, [token]);
-
   const [selectedTeam, setSelectedTeam] = useState("");
   const [opponentTeam, setOpponentTeam] = useState("");
   const [isFlipped, setIsFlipped] = useState({
@@ -51,6 +29,16 @@ function Predict2() {
     lose: false,
     draw: false,
   });
+
+  useEffect(() => {
+    const getInfo = async () => {
+      if (token) {
+        const fetchedData = await Fetch_predict(token,selectedTeam,opponentTeam);
+        setPredictData(fetchedData);
+      }
+    };
+    getInfo();
+  }, [token]);
 
 
   const teamImages = {
@@ -90,6 +78,7 @@ function Predict2() {
   return (
     <div>
       <Headerbar />
+      {PredictData}
       <div className="predict_page_container_outer">
         <div className="predict_page_container_big">
           <div className="predict_page_logo_container">

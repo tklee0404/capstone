@@ -1,10 +1,9 @@
 
 
-async function Fetch_predict(token) {
+async function Fetch_predict(token,teamA,teamB) {
 
-    const url = 'http://220.88.39.23:5000/api/predict/nearest';
-    
-    
+    const url = `http://220.88.39.23:5000/api/predict?team_A=${teamA}&team_B=${teamB}`;
+
     try {
         const response = await fetch(url, {
             method: 'GET',
