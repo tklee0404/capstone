@@ -2,7 +2,7 @@
 
 async function Fetch_predict(token,teamA,teamB) {
 
-    const url = `http://220.88.39.23:5000/api/predict?team_A=${teamA}&team_B=${teamB}`;
+    const url = `http://220.88.39.23:5000/api/predict_probab?team_A=${encodeURIComponent(teamA)}&team_B=${encodeURIComponent(teamB)}`;
 
     try {
         const response = await fetch(url, {

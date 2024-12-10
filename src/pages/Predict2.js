@@ -1,6 +1,6 @@
 import React from "react";
 import Headerbar from "../UI/header.js";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import "../App.css";
 import "../compoAssets/predict_result_page_style.css";
 
@@ -18,10 +18,10 @@ import K11 from "../logo_image/emblem_K11.png";
 import K12 from "../logo_image/emblem_K12.png";
 
 import Fetch_predict from "../apiService/fetch_predict.js";
-
 function Predict2() {
   const token = localStorage.getItem("token");
-  const [PredictData, setPredictData] = useState([]);
+  const [PredictData, setPredictData] = useState({});
+  const [loading, setLoading] = useState(true);
   const [selectedTeam, setSelectedTeam] = useState("");
   const [opponentTeam, setOpponentTeam] = useState("");
   const [isFlipped, setIsFlipped] = useState({
@@ -33,13 +33,19 @@ function Predict2() {
   useEffect(() => {
     const getInfo = async () => {
       if (token) {
-        const fetchedData = await Fetch_predict(token,selectedTeam,opponentTeam);
-        setPredictData(fetchedData);
+        setLoading(true);
+        try {
+          const fetchedData = await Fetch_predict(token, selectedTeam, opponentTeam);
+          setPredictData(fetchedData);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        } finally {
+          setLoading(false);
+        }
       }
     };
     getInfo();
-  }, [token]);
-
+  }, [token, selectedTeam, opponentTeam]);
 
   const teamImages = {
     울산: K01,
@@ -53,7 +59,7 @@ function Predict2() {
     강원: K09,
     광주: K10,
     수원FC: K11,
-    김천: K12
+    김천: K12,
   };
 
   useEffect(() => {
@@ -70,67 +76,60 @@ function Predict2() {
   const handleCardClick = (cardType) => {
     setIsFlipped((prev) => ({
       ...prev,
-      [cardType]: !prev[cardType], // 해당 카드의 상태만 변경
+      [cardType]: !prev[cardType],
     }));
   };
-
 
   return (
     <div>
       <Headerbar />
-      {PredictData}
       <div className="predict_page_container_outer">
         <div className="predict_page_container_big">
           <div className="predict_page_logo_container">
-            <div><img className="predict_result_logo" src={teamImages[selectedTeam]} alt={`${selectedTeam} logo`}></img></div>
+            <div>
+              <img className="predict_result_logo" src={teamImages[selectedTeam]} alt={`${selectedTeam} logo`} />
+            </div>
             <div className="vs">VS</div>
-            <div><img className="predict_result_logo" src={teamImages[opponentTeam]} alt={`${opponentTeam} logo`}></img></div>
+            <div>
+              <img className="predict_result_logo" src={teamImages[opponentTeam]} alt={`${opponentTeam} logo`} />
+            </div>
           </div>
           <div className="predict_page_result_container">
             <div className="predict_result_value_container">
-              <div className={`predict_card ${isFlipped.win ? "is-flipped" : ""}`}
-                onClick={() => handleCardClick("win")}>
-                <div className="predict_result_win_card_front">
-                  ?
-                </div>
+              <div className={`predict_card ${isFlipped.win ? "is-flipped" : ""}`} onClick={() => handleCardClick("win")}>
+                <div className="predict_result_win_card_front">?</div>
                 <div className="predict_result_win_card_back">
-                  <div className="predict_result_win_card_back_title">
-                    WIN
-                  </div>
+                  <div className="predict_result_win_card_back_title">WIN</div>
                   <div className="predict_result_win_card_back_value">
-                    NN %
+                    {loading ? "Loading..." : `${(PredictData.win * 100).toFixed(2)}%`}
                   </div>
                 </div>
               </div>
             </div>
             <div className="predict_result_value_container">
-              <div className={`predict_card ${isFlipped.lose ? "is-flipped" : ""}`}
-                onClick={() => handleCardClick("lose")}>
-                <div className="predict_result_lose_card_front">
-                  ?
-                </div>
+              <div
+                className={`predict_card ${isFlipped.lose ? "is-flipped" : ""}`}
+                onClick={() => handleCardClick("lose")}
+              >
+                <div className="predict_result_lose_card_front">?</div>
                 <div className="predict_result_lose_card_back">
-                  <div className="predict_result_lose_card_back_title">
-                    LOSE
-                  </div>
+                  <div className="predict_result_lose_card_back_title">LOSE</div>
                   <div className="predict_result_lose_card_back_value">
-                    NN %
+                    {loading ? "Loading..." : `${(PredictData.lose * 100).toFixed(2)}%`}
                   </div>
                 </div>
               </div>
             </div>
             <div className="predict_result_value_container">
-              <div className={`predict_card ${isFlipped.draw ? "is-flipped" : ""}`}
-                onClick={() => handleCardClick("draw")}>
-                <div className="predict_result_draw_card_front">
-                  ?
-                </div>
+              <div
+                className={`predict_card ${isFlipped.draw ? "is-flipped" : ""}`}
+                onClick={() => handleCardClick("draw")}
+              >
+                <div className="predict_result_draw_card_front">?</div>
                 <div className="predict_result_draw_card_back">
-                  <div className="predict_result_draw_card_back_title">
-                    DRAW
-                  </div>
+                  <div className="predict_result_draw_card_back_title">DRAW</div>
                   <div className="predict_result_draw_card_back_value">
-                    NN %
+                    {loading ? "Loading..." : `${(PredictData.draw * 100).toFixed(2)}%`}
                   </div>
                 </div>
               </div>
@@ -140,7 +139,6 @@ function Predict2() {
       </div>
     </div>
   );
-
 }
 
 export default Predict2;
