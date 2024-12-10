@@ -9,8 +9,8 @@ const navigation = [
   { name: '분석', href: '/Analysis2', current: false },
   { name: '캘린더', href: '/Calendar', current: false },
   { name: '예측', href: '/Predict1', current: false },
-  { name: '게시반', href: '/Board1', current: false },
-  // { name: 'test', href: '/test', current: false }
+  { name: '게시판', href: '/Board1', current: false },
+
 ]
 
 function classNames(...classes) {
