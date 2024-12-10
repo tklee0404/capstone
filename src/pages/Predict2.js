@@ -1,6 +1,6 @@
 import React from "react";
 import Headerbar from "../UI/header.js";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import "../compoAssets/predict_result_page_style.css";
 
@@ -85,6 +85,7 @@ function Predict2() {
       <Headerbar />
       <div className="predict_page_container_outer">
         <div className="predict_page_container_big">
+
           <div className="predict_page_logo_container">
             <div>
               <img className="predict_result_logo" src={teamImages[selectedTeam]} alt={`${selectedTeam} logo`} />
@@ -94,6 +95,7 @@ function Predict2() {
               <img className="predict_result_logo" src={teamImages[opponentTeam]} alt={`${opponentTeam} logo`} />
             </div>
           </div>
+
           <div className="predict_page_result_container">
             <div className="predict_result_value_container">
               <div className={`predict_card ${isFlipped.win ? "is-flipped" : ""}`} onClick={() => handleCardClick("win")}>
@@ -137,6 +139,14 @@ function Predict2() {
           </div>
         </div>
       </div>
+
+      <footer class="footer footer-center bg-base-200/60 px-6 py-4" style={{ position: 'fixed', bottom: 0, left: 0, width: '100%', }}>
+        <aside>
+          <p>Copyright © 2024-IntG_Team - All right reserved.</p>
+        </aside>
+      </footer>
+
+
     </div>
   );
 }

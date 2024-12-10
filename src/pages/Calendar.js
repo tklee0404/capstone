@@ -14,6 +14,11 @@ function Calendar() {
 
       <div><Calendar_infor /></div>
 
+      <footer class="footer footer-center bg-base-200/60 px-6 py-4">
+        <aside>
+          <p>Copyright © 2024-IntG_Team - All right reserved.</p>
+        </aside>
+      </footer>
     </div>
 
   );
