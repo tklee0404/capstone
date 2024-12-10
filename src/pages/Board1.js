@@ -100,9 +100,7 @@ function Board1() {
 
 
              <PostBoard />
-                <Link to="/Board2" className="text-blue-500 underline">
-                  Go to Board2
-                </Link>
+          
               </div>
             </div>
         </div>
