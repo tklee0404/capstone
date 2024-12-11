@@ -41,6 +41,7 @@ function Board2() {
 
                 </div>
             </div>
+            
         </div>
     );
 }

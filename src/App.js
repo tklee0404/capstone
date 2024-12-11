@@ -9,7 +9,7 @@ import Home from './pages/Home.js';
 import News1 from './pages/News1.js';
 
 import Calendar from './pages/Calendar.js';
-import Analysis1 from './pages/Analysis1.js';
+
 import Analysis2 from './pages/Analysis2.js';
 import Predict1 from './pages/Predict1.js';
 import Predict2 from './pages/Predict2.js';
@@ -30,9 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/News1" element={<News1 />}></Route>
-
         <Route path="/Calendar" element={<Calendar />}></Route>
-        <Route path="/Analysis1" element={<Analysis1 />}></Route>
         <Route path="/Predict1" element={<Predict1 />}></Route>
         <Route path="/Analysis2" element={<Analysis2 />}></Route>
         <Route path="/Predict2" element={<Predict2 />}></Route>

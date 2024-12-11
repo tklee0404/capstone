@@ -187,83 +187,83 @@ export default function CardExample() {
                 >
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "club_internal" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "club_internal" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-1"
                         role="tab"
                         aria-selected={activeTab === "club_internal"}
                         onClick={() => setActiveTab("club_internal")}
                     >
-                        club_internal
+                        구단
                     </button>
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "player_idv" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "player_idv" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-2"
                         role="tab"
                         aria-selected={activeTab === "player_idv"}
                         onClick={() => setActiveTab("player_idv")}
                     >
-                        player_idv
+                        선수 개인
                     </button>
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "Match_result" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "Match_result" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-3"
                         role="tab"
                         aria-selected={activeTab === "Match_result"}
                         onClick={() => setActiveTab("Match_result")}
                     >
-                        Match_result
+                        경기 후
                     </button>
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "match_plan" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "match_plan" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-1"
                         role="tab"
                         aria-selected={activeTab === "match_plan"}
                         onClick={() => setActiveTab("match_plan")}
                     >
-                        match_plan
+                        경기 전
                     </button>
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "Issue" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "Issue" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-1"
                         role="tab"
                         aria-selected={activeTab === "Issue"}
                         onClick={() => setActiveTab("Issue")}
                     >
-                        Issue
+                        논란
                     </button>
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "tradeData" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "tradeData" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-1"
                         role="tab"
                         aria-selected={activeTab === "tradeData"}
                         onClick={() => setActiveTab("tradeData")}
                     >
-                        tradeData
+                        이적
                     </button>
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "Squad" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "Squad" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-1"
                         role="tab"
                         aria-selected={activeTab === "Squad"}
                         onClick={() => setActiveTab("Squad")}
                     >
-                        Squad
+                        선발
                     </button>
                     <button
                         type="button"
-                        className={`tab w-full ${activeTab === "Interview" ? "tab-active" : ""}`}
+                        className={`tab w-full whitespace-nowrap ${activeTab === "Interview" ? "tab-active" : ""}`}
                         id="tabs-basic-filled-item-1"
                         role="tab"
                         aria-selected={activeTab === "Interview"}
                         onClick={() => setActiveTab("Interview")}
                     >
-                        Interview
+                        인터뷰
                     </button>
 
 
