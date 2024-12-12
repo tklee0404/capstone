@@ -11,9 +11,8 @@ import Tackles from "../UI/tacklesUI.js";
 import Assists from "../UI/assistsUI.js";
 
 function Analysis2() {
-  const [activeTab, setActiveTab] = useState(1);  // 默认激活第一个 tab
+  const [activeTab, setActiveTab] = useState(1); 
 
-  // 处理 tab 切换
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);
   };
