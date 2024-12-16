@@ -7,7 +7,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes backward</h5>
+          <h5 class="card-title">백패스</h5>
         </div>
         <div class="card-body"></div>
         <MyChart name={"passes_backward"} />
@@ -19,7 +19,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes critical</h5>
+          <h5 class="card-title">결정적 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_critical"} />
@@ -31,7 +31,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes Crosses</h5>
+          <h5 class="card-title">크로스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_crosses"} />
@@ -43,7 +43,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes Forward</h5>
+          <h5 class="card-title">전진 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_forward"} />
@@ -55,7 +55,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes Horizontal</h5>
+          <h5 class="card-title">수평 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_horizontal"} />
@@ -67,7 +67,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes in Attack Area</h5>
+          <h5 class="card-title">공격지역 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_in_attack_area"} />
@@ -79,7 +79,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes in Defense Area</h5>
+          <h5 class="card-title">수비지역 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_in_defense_area"} />
@@ -91,7 +91,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes in Middle Area</h5>
+          <h5 class="card-title">미들지역 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_in_middle_area"} />
@@ -103,7 +103,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes Long Range</h5>
+          <h5 class="card-title">장거리 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_long_range"} />
@@ -115,7 +115,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes Middle Range</h5>
+          <h5 class="card-title">중거리 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_middle_range"} />
@@ -127,7 +127,7 @@ export default function CardExample() {
 
       <div class="card sm:max-w-m flex-1">
         <div class="card-header">
-          <h5 class="card-title">Passes Short Range</h5>
+          <h5 class="card-title">단거리 패스</h5>
         </div>
         <div class="card-body">
           <MyChart name={"passes_short_range"} />

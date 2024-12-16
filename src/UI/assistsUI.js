@@ -7,7 +7,7 @@ export default function CardExample() {
 
     <div class="card sm:max-w-m flex-1">
       <div class="card-header">
-        <h5 class="card-title">Shots Blocked</h5>
+        <h5 class="card-title">어시스트</h5>
       </div>
       <div class="card-body"></div>
       <SingleAreaChart />

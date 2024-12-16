@@ -39,7 +39,7 @@ function Analysis2() {
           role="tab"
           aria-selected={activeTab === 1}
         >
-          Shots
+          슈팅
         </button>
         <button
           type="button"
@@ -49,7 +49,7 @@ function Analysis2() {
           role="tab"
           aria-selected={activeTab === 2}
         >
-          Pass
+          패스
         </button>
         <button
           type="button"
@@ -59,7 +59,7 @@ function Analysis2() {
           role="tab"
           aria-selected={activeTab === 3}
         >
-          tackles
+          태클
         </button>
         <button
           type="button"
@@ -69,7 +69,7 @@ function Analysis2() {
           role="tab"
           aria-selected={activeTab === 4}
         >
-          Assists
+          어시스트
         </button>
       </nav>
 

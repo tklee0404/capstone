@@ -33,7 +33,7 @@ function PostBoard() {
   };
 
   return (
-    <div className="flex flex-col items-center flex bg-yellow-500 w-4/5 h-[400px]">
+    <div className="flex flex-col items-center flex w-4/5 h-[400px]">
       <div className="flex flex-col items-center w-full bg-white h-full border border-black rounded-2xl">
         <input
           className="px-2 w-10/12 h-1/12 bg-gray-300 mt-2 border border-black rounded-md"

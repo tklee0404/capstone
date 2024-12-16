@@ -7,7 +7,7 @@ export default function CardExample() {
 
     <div class="card sm:max-w-m flex-1">
       <div class="card-header">
-        <h5 class="card-title">Shots Blocked</h5>
+        <h5 class="card-title">막힌 슈팅</h5>
       </div>
       <div class="card-body"></div>
       <MyChart name={"Shots Blocked"} />
@@ -19,7 +19,7 @@ export default function CardExample() {
 
     <div class="card sm:max-w-m flex-1">
       <div class="card-header">
-        <h5 class="card-title"> Shots in PA</h5>
+        <h5 class="card-title"> PA 내부 슈팅</h5>
       </div>
       <div class="card-body"></div>
       <MyChart name={"Shots in PA"} />
@@ -31,7 +31,7 @@ export default function CardExample() {
 
     <div class="card sm:max-w-m flex-1">
       <div class="card-header">
-        <h5 class="card-title">Shots on Target</h5>
+        <h5 class="card-title">유효 슈팅</h5>
       </div>
       <div class="card-body"></div>
       <MyChart name={"Shots on Target"} />
@@ -43,7 +43,7 @@ export default function CardExample() {
 
     <div class="card sm:max-w-m flex-1">
       <div class="card-header">
-        <h5 class="card-title">Shots out of PA</h5>
+        <h5 class="card-title">PA 외부 슈팅</h5>
       </div>
       <div class="card-body"></div>
       <MyChart name={"Shots out of PA"} />
@@ -55,7 +55,7 @@ export default function CardExample() {
 
     <div class="card sm:max-w-m flex-1">
       <div class="card-header">
-        <h5 class="card-title">Shots ut of Bounds</h5>
+        <h5 class="card-title">무효 슈팅</h5>
       </div>
       <div class="card-body"></div>
       <MyChart name={"Shots out of Bounds"} />
